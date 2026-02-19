@@ -1,0 +1,125 @@
+[
+  {
+    "id": "e_000001",
+    "week": 1,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000001_i01",
+          "nl": "Waar is de __?",
+          "answer": "melk",
+          "word_id": "w_000017"
+        },
+        {
+          "id": "e_000001_i02",
+          "nl": "Ik wil een kilo __.",
+          "answer": "aardappel",
+          "word_id": "w_000026"
+        },
+        {
+          "id": "e_000001_i03",
+          "nl": "Is de yoghurt in de __?",
+          "answer": "aanbieding",
+          "word_id": "w_000013"
+        },
+        {
+          "id": "e_000001_i04",
+          "nl": "Ik betaal bij de __.",
+          "answer": "kassa",
+          "word_id": "w_000005"
+        },
+        {
+          "id": "e_000001_i05",
+          "nl": "Heeft u een __ nodig?",
+          "answer": "tas",
+          "word_id": "w_000058"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "e_000002",
+    "week": 2,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000002_i01",
+          "nl": "Ik wil een __ maken.",
+          "answer": "afspraak",
+          "word_id": "w_000065"
+        },
+        {
+          "id": "e_000002_i02",
+          "nl": "Waar is het __?",
+          "answer": "loket",
+          "word_id": "w_000063"
+        },
+        {
+          "id": "e_000002_i03",
+          "nl": "Ik neem mijn __ mee.",
+          "answer": "paspoort",
+          "word_id": "w_000087"
+        },
+        {
+          "id": "e_000002_i04",
+          "nl": "Ik moet het __ invullen.",
+          "answer": "formulier",
+          "word_id": "w_000074"
+        },
+        {
+          "id": "e_000002_i05",
+          "nl": "Heeft u een __ nodig?",
+          "answer": "kopie",
+          "word_id": "w_000093"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "e_000003",
+    "week": 3,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000003_i01",
+          "nl": "Ik betaal elke maand de __.",
+          "answer": "huur",
+          "word_id": "w_000151"
+        },
+        {
+          "id": "e_000003_i02",
+          "nl": "Waar is de __?",
+          "answer": "badkamer",
+          "word_id": "w_000128"
+        },
+        {
+          "id": "e_000003_i03",
+          "nl": "De __ is kapot.",
+          "answer": "verwarming",
+          "word_id": "w_000150"
+        },
+        {
+          "id": "e_000003_i04",
+          "nl": "Ik zoek een __ met balkon.",
+          "answer": "appartement",
+          "word_id": "w_000123"
+        },
+        {
+          "id": "e_000003_i05",
+          "nl": "Ik neem de __ mee.",
+          "answer": "sleutel",
+          "word_id": "w_000160"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  }
+]

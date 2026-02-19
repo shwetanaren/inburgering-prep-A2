@@ -1,0 +1,1048 @@
+[
+  {
+    "id": "l_000001",
+    "week": 1,
+    "title": "Week 1 — In de supermarkt",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000001",
+        "w_000002",
+        "w_000003",
+        "w_000004",
+        "w_000005",
+        "w_000006",
+        "w_000007",
+        "w_000008",
+        "w_000009",
+        "w_000010",
+        "w_000011",
+        "w_000012",
+        "w_000013",
+        "w_000014",
+        "w_000015",
+        "w_000016",
+        "w_000017",
+        "w_000018",
+        "w_000019",
+        "w_000020",
+        "w_000021",
+        "w_000022",
+        "w_000023",
+        "w_000024",
+        "w_000025",
+        "w_000026",
+        "w_000027",
+        "w_000028",
+        "w_000029",
+        "w_000030",
+        "w_000031",
+        "w_000032",
+        "w_000033",
+        "w_000034",
+        "w_000035",
+        "w_000036",
+        "w_000037",
+        "w_000038",
+        "w_000039",
+        "w_000040",
+        "w_000041",
+        "w_000042",
+        "w_000043",
+        "w_000044",
+        "w_000045",
+        "w_000046",
+        "w_000047",
+        "w_000048",
+        "w_000049",
+        "w_000050",
+        "w_000051",
+        "w_000052",
+        "w_000053",
+        "w_000054",
+        "w_000055",
+        "w_000056",
+        "w_000057",
+        "w_000058",
+        "w_000059",
+        "w_000060"
+      ],
+      "intro_nl": "Je leert basiswoorden voor boodschappen doen.",
+      "intro_en": "You learn basic words for grocery shopping."
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000002",
+    "week": 1,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "example": {
+        "nl": "Ik koop brood.",
+        "en": "I buy bread."
+      },
+      "sentences": [
+        {
+          "nl": "Ik koop brood.",
+          "en": "I buy bread."
+        },
+        {
+          "nl": "De klant betaalt contant.",
+          "en": "The customer pays cash."
+        },
+        {
+          "nl": "We halen melk.",
+          "en": "We get milk."
+        }
+      ],
+      "word_ids": [
+        "w_000016",
+        "w_000004",
+        "w_000055",
+        "w_000017"
+      ],
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc_en": "Subject + Verb + Rest"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000003",
+    "week": 1,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "example": {
+        "nl": "Vandaag koop ik fruit.",
+        "en": "Today I buy fruit."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag koop ik fruit.",
+          "en": "Today I buy fruit."
+        },
+        {
+          "nl": "In de supermarkt betaal ik bij de kassa.",
+          "en": "In the supermarket I pay at the checkout."
+        },
+        {
+          "nl": "Morgen haal ik melk en brood.",
+          "en": "Tomorrow I get milk and bread."
+        }
+      ],
+      "word_ids": [
+        "w_000022",
+        "w_000002",
+        "w_000053",
+        "w_000005",
+        "w_000017",
+        "w_000016"
+      ],
+      "pattern_title_en": "Inversion",
+      "pattern_desc_en": "Time/place + verb + subject"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000004",
+    "week": 1,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "En/maar/of",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "example": {
+        "nl": "Ik koop melk en jij koopt brood.",
+        "en": "I buy milk and you buy bread."
+      },
+      "sentences": [
+        {
+          "nl": "Ik koop melk en jij koopt brood.",
+          "en": "I buy milk and you buy bread."
+        },
+        {
+          "nl": "De kaas is duur, maar de boter is goedkoop.",
+          "en": "The cheese is expensive, but the butter is cheap."
+        },
+        {
+          "nl": "We nemen water of sap.",
+          "en": "We take water or juice."
+        }
+      ],
+      "word_ids": [
+        "w_000017",
+        "w_000016",
+        "w_000018",
+        "w_000019",
+        "w_000049",
+        "w_000048",
+        "w_000032",
+        "w_000033"
+      ],
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc_en": "Clause + and/but/or + clause"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000005",
+    "week": 1,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "example": {
+        "nl": "Waar staat de melk?",
+        "en": "Where is the milk?"
+      },
+      "sentences": [
+        {
+          "nl": "Waar staat de melk?",
+          "en": "Where is the milk?"
+        },
+        {
+          "nl": "Hoeveel kost een kilo appels?",
+          "en": "How much does a kilo of apples cost?"
+        },
+        {
+          "nl": "Heeft u een tas nodig?",
+          "en": "Do you need a bag?"
+        }
+      ],
+      "word_ids": [
+        "w_000017",
+        "w_000014",
+        "w_000023",
+        "w_000011",
+        "w_000058",
+        "w_000059"
+      ],
+      "pattern_title_en": "Questions",
+      "pattern_desc_en": "Question word + verb + subject"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000006",
+    "week": 1,
+    "title": "E — Modaal (kunnen/willen/moeten)",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "example": {
+        "nl": "Ik wil betalen.",
+        "en": "I want to pay."
+      },
+      "sentences": [
+        {
+          "nl": "Ik wil betalen.",
+          "en": "I want to pay."
+        },
+        {
+          "nl": "Kunt u de kassa aanwijzen?",
+          "en": "Can you point out the checkout?"
+        },
+        {
+          "nl": "We moeten nog brood kopen.",
+          "en": "We still have to buy bread."
+        }
+      ],
+      "word_ids": [
+        "w_000053",
+        "w_000005",
+        "w_000016"
+      ],
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc_en": "Subject + modal + rest + infinitive"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000007",
+    "week": 1,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_desc": "Werkwoord splitst: ik betaal af / ik haal op",
+      "example": {
+        "nl": "Ik reken bij de kassa af.",
+        "en": "I pay at the checkout."
+      },
+      "sentences": [
+        {
+          "nl": "Ik reken bij de kassa af.",
+          "en": "I pay at the checkout."
+        },
+        {
+          "nl": "We halen de bon zo meteen op.",
+          "en": "We pick up the receipt in a moment."
+        },
+        {
+          "nl": "Ik pak een kar en loop het gangpad in.",
+          "en": "I take a cart and walk into the aisle."
+        }
+      ],
+      "word_ids": [
+        "w_000005",
+        "w_000057",
+        "w_000008",
+        "w_000009"
+      ],
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc_en": "Verb splits: ik reken af / ik haal op"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000008",
+    "week": 1,
+    "title": "G — Bijzin (dat/omdat)",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "example": {
+        "nl": "Ik koop water omdat het goedkoop is.",
+        "en": "I buy water because it is cheap."
+      },
+      "sentences": [
+        {
+          "nl": "Ik koop water omdat het goedkoop is.",
+          "en": "I buy water because it is cheap."
+        },
+        {
+          "nl": "Ik neem een tas omdat de winkel druk is.",
+          "en": "I take a bag because the shop is busy."
+        },
+        {
+          "nl": "We kopen fruit omdat het vers is.",
+          "en": "We buy fruit because it is fresh."
+        }
+      ],
+      "word_ids": [
+        "w_000032",
+        "w_000048",
+        "w_000058",
+        "w_000001",
+        "w_000022",
+        "w_000050"
+      ],
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc_en": "Main clause + because/that + subject + verb"
+    },
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "l_000009",
+    "week": 2,
+    "title": "Week 2 — Bij de gemeente",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000061",
+        "w_000062",
+        "w_000063",
+        "w_000064",
+        "w_000065",
+        "w_000066",
+        "w_000067",
+        "w_000068",
+        "w_000069",
+        "w_000070",
+        "w_000071",
+        "w_000072",
+        "w_000073",
+        "w_000074",
+        "w_000075",
+        "w_000076",
+        "w_000077",
+        "w_000078",
+        "w_000079",
+        "w_000080",
+        "w_000081",
+        "w_000082",
+        "w_000083",
+        "w_000084",
+        "w_000085",
+        "w_000086",
+        "w_000087",
+        "w_000088",
+        "w_000089",
+        "w_000090",
+        "w_000091",
+        "w_000092",
+        "w_000093",
+        "w_000094",
+        "w_000095",
+        "w_000096",
+        "w_000097",
+        "w_000098",
+        "w_000099",
+        "w_000100",
+        "w_000101",
+        "w_000102",
+        "w_000103",
+        "w_000104",
+        "w_000105",
+        "w_000106",
+        "w_000107",
+        "w_000108",
+        "w_000109",
+        "w_000110",
+        "w_000111",
+        "w_000112",
+        "w_000113",
+        "w_000114",
+        "w_000115",
+        "w_000116",
+        "w_000117",
+        "w_000118",
+        "w_000119",
+        "w_000120"
+      ],
+      "intro_nl": "Je leert basiswoorden voor zaken bij de gemeente.",
+      "intro_en": "You learn basic words for municipal services."
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000010",
+    "week": 2,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "pattern_desc_en": "Subject + Verb + Rest",
+      "example": {
+        "nl": "Ik maak een afspraak.",
+        "en": "I make an appointment."
+      },
+      "sentences": [
+        {
+          "nl": "Ik maak een afspraak.",
+          "en": "I make an appointment."
+        },
+        {
+          "nl": "De medewerker helpt mij.",
+          "en": "The staff member helps me."
+        },
+        {
+          "nl": "Ik neem mijn paspoort mee.",
+          "en": "I bring my passport."
+        }
+      ],
+      "word_ids": [
+        "w_000065",
+        "w_000070",
+        "w_000087"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000011",
+    "week": 2,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_title_en": "Inversion",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "pattern_desc_en": "Time/place + verb + subject",
+      "example": {
+        "nl": "Vandaag ga ik naar de gemeente.",
+        "en": "Today I go to the municipality."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag ga ik naar de gemeente.",
+          "en": "Today I go to the municipality."
+        },
+        {
+          "nl": "Bij het loket vraag ik informatie.",
+          "en": "At the counter I ask for information."
+        },
+        {
+          "nl": "Morgen haal ik het document op.",
+          "en": "Tomorrow I pick up the document."
+        }
+      ],
+      "word_ids": [
+        "w_000061",
+        "w_000063",
+        "w_000117",
+        "w_000091"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000012",
+    "week": 2,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "Nevenschikking",
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "pattern_desc_en": "Clause + and/but/or + clause",
+      "example": {
+        "nl": "Ik vul het formulier in en ik lever het in.",
+        "en": "I fill in the form and I submit it."
+      },
+      "sentences": [
+        {
+          "nl": "Ik vul het formulier in en ik lever het in.",
+          "en": "I fill in the form and I submit it."
+        },
+        {
+          "nl": "Ik heb een afspraak, maar ik moet wachten.",
+          "en": "I have an appointment, but I have to wait."
+        },
+        {
+          "nl": "U kunt pinnen of contant betalen.",
+          "en": "You can pay by card or in cash."
+        }
+      ],
+      "word_ids": [
+        "w_000074",
+        "w_000095",
+        "w_000065",
+        "w_000067"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000013",
+    "week": 2,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_title_en": "Questions",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "pattern_desc_en": "Question word + verb + subject",
+      "example": {
+        "nl": "Waar is het loket?",
+        "en": "Where is the counter?"
+      },
+      "sentences": [
+        {
+          "nl": "Waar is het loket?",
+          "en": "Where is the counter?"
+        },
+        {
+          "nl": "Wanneer is de afspraak?",
+          "en": "When is the appointment?"
+        },
+        {
+          "nl": "Welke documenten moet ik meenemen?",
+          "en": "Which documents must I bring?"
+        }
+      ],
+      "word_ids": [
+        "w_000063",
+        "w_000065",
+        "w_000091",
+        "w_000094"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000014",
+    "week": 2,
+    "title": "E — Modale werkwoorden",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "pattern_desc_en": "Subject + modal + rest + infinitive",
+      "example": {
+        "nl": "Ik moet een formulier invullen.",
+        "en": "I must fill in a form."
+      },
+      "sentences": [
+        {
+          "nl": "Ik moet een formulier invullen.",
+          "en": "I must fill in a form."
+        },
+        {
+          "nl": "Kunt u mij helpen?",
+          "en": "Can you help me?"
+        },
+        {
+          "nl": "Ik wil mijn adres wijzigen.",
+          "en": "I want to change my address."
+        }
+      ],
+      "word_ids": [
+        "w_000074",
+        "w_000072",
+        "w_000079"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000015",
+    "week": 2,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc": "Werkwoord splitst: ik lever in / ik haal op",
+      "pattern_desc_en": "Verb splits: I submit / I pick up",
+      "example": {
+        "nl": "Ik lever het formulier in.",
+        "en": "I submit the form."
+      },
+      "sentences": [
+        {
+          "nl": "Ik lever het formulier in.",
+          "en": "I submit the form."
+        },
+        {
+          "nl": "Ik haal mijn paspoort op.",
+          "en": "I pick up my passport."
+        },
+        {
+          "nl": "We schrijven ons hier in.",
+          "en": "We register here."
+        }
+      ],
+      "word_ids": [
+        "w_000095",
+        "w_000096",
+        "w_000086"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000016",
+    "week": 2,
+    "title": "G — Bijzin",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "pattern_desc_en": "Main clause + because/that + subject + verb",
+      "example": {
+        "nl": "Ik neem een foto mee omdat die nodig is.",
+        "en": "I bring a photo because it is needed."
+      },
+      "sentences": [
+        {
+          "nl": "Ik neem een foto mee omdat die nodig is.",
+          "en": "I bring a photo because it is needed."
+        },
+        {
+          "nl": "Ik wacht omdat ik geen nummer heb.",
+          "en": "I wait because I don't have a number."
+        },
+        {
+          "nl": "We komen terug omdat het document nog niet klaar is.",
+          "en": "We come back because the document is not ready yet."
+        }
+      ],
+      "word_ids": [
+        "w_000089",
+        "w_000068",
+        "w_000097"
+      ]
+    },
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "l_000017",
+    "week": 3,
+    "title": "Week 3 — Wonen",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000121",
+        "w_000122",
+        "w_000123",
+        "w_000124",
+        "w_000125",
+        "w_000126",
+        "w_000127",
+        "w_000128",
+        "w_000129",
+        "w_000130",
+        "w_000131",
+        "w_000132",
+        "w_000133",
+        "w_000134",
+        "w_000135",
+        "w_000136",
+        "w_000137",
+        "w_000138",
+        "w_000139",
+        "w_000140",
+        "w_000141",
+        "w_000142",
+        "w_000143",
+        "w_000144",
+        "w_000145",
+        "w_000146",
+        "w_000147",
+        "w_000148",
+        "w_000149",
+        "w_000150",
+        "w_000151",
+        "w_000152",
+        "w_000153",
+        "w_000154",
+        "w_000155",
+        "w_000156",
+        "w_000157",
+        "w_000158",
+        "w_000159",
+        "w_000160",
+        "w_000161",
+        "w_000162",
+        "w_000163",
+        "w_000164",
+        "w_000165",
+        "w_000166",
+        "w_000167",
+        "w_000168",
+        "w_000169",
+        "w_000170",
+        "w_000171",
+        "w_000172",
+        "w_000173",
+        "w_000174",
+        "w_000175",
+        "w_000176",
+        "w_000177",
+        "w_000178",
+        "w_000179",
+        "w_000180"
+      ],
+      "intro_nl": "Je leert basiswoorden over wonen en wonen in een huis.",
+      "intro_en": "You learn basic words about housing and living at home."
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000018",
+    "week": 3,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "pattern_desc_en": "Subject + Verb + Rest",
+      "example": {
+        "nl": "Ik huur een appartement.",
+        "en": "I rent an apartment."
+      },
+      "sentences": [
+        {
+          "nl": "Ik huur een appartement.",
+          "en": "I rent an apartment."
+        },
+        {
+          "nl": "De huurder betaalt de huur.",
+          "en": "The tenant pays the rent."
+        },
+        {
+          "nl": "De sleutel ligt op tafel.",
+          "en": "The key is on the table."
+        }
+      ],
+      "word_ids": [
+        "w_000123",
+        "w_000156",
+        "w_000151",
+        "w_000153",
+        "w_000142"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000019",
+    "week": 3,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_title_en": "Inversion",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "pattern_desc_en": "Time/place + verb + subject",
+      "example": {
+        "nl": "Vandaag bel ik de verhuurder.",
+        "en": "Today I call the landlord."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag bel ik de verhuurder.",
+          "en": "Today I call the landlord."
+        },
+        {
+          "nl": "In de keuken kook ik.",
+          "en": "In the kitchen I cook."
+        },
+        {
+          "nl": "Morgen verhuizen we.",
+          "en": "Tomorrow we move."
+        }
+      ],
+      "word_ids": [
+        "w_000155",
+        "w_000127",
+        "w_000177"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000020",
+    "week": 3,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "Nevenschikking",
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "pattern_desc_en": "Clause + and/but/or + clause",
+      "example": {
+        "nl": "De woning is klein, maar hij is schoon.",
+        "en": "The home is small, but it is clean."
+      },
+      "sentences": [
+        {
+          "nl": "De woning is klein, maar hij is schoon.",
+          "en": "The home is small, but it is clean."
+        },
+        {
+          "nl": "Ik wil een balkon en een tuin.",
+          "en": "I want a balcony and a garden."
+        },
+        {
+          "nl": "We nemen een lift of de trap.",
+          "en": "We take an elevator or the stairs."
+        }
+      ],
+      "word_ids": [
+        "w_000122",
+        "w_000170",
+        "w_000168",
+        "w_000136",
+        "w_000137",
+        "w_000135"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000021",
+    "week": 3,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_title_en": "Questions",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "pattern_desc_en": "Question word + verb + subject",
+      "example": {
+        "nl": "Waar is de badkamer?",
+        "en": "Where is the bathroom?"
+      },
+      "sentences": [
+        {
+          "nl": "Waar is de badkamer?",
+          "en": "Where is the bathroom?"
+        },
+        {
+          "nl": "Hoeveel is de borg?",
+          "en": "How much is the deposit?"
+        },
+        {
+          "nl": "Wanneer krijg ik de sleutel?",
+          "en": "When do I get the key?"
+        }
+      ],
+      "word_ids": [
+        "w_000128",
+        "w_000157",
+        "w_000161"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000022",
+    "week": 3,
+    "title": "E — Modale werkwoorden",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "pattern_desc_en": "Subject + modal + rest + infinitive",
+      "example": {
+        "nl": "Ik moet de huur betalen.",
+        "en": "I must pay the rent."
+      },
+      "sentences": [
+        {
+          "nl": "Ik moet de huur betalen.",
+          "en": "I must pay the rent."
+        },
+        {
+          "nl": "Kunt u de reparatie doen?",
+          "en": "Can you do the repair?"
+        },
+        {
+          "nl": "We willen samenwonen.",
+          "en": "We want to live together."
+        }
+      ],
+      "word_ids": [
+        "w_000151",
+        "w_000160",
+        "w_000180"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000023",
+    "week": 3,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc": "Werkwoord splitst: ik schrijf in / ik trek uit",
+      "pattern_desc_en": "Verb splits: I register / I move out",
+      "example": {
+        "nl": "Ik schrijf me bij de gemeente in.",
+        "en": "I register at the municipality."
+      },
+      "sentences": [
+        {
+          "nl": "Ik schrijf me bij de gemeente in.",
+          "en": "I register at the municipality."
+        },
+        {
+          "nl": "Ik haal de sleutels op.",
+          "en": "I pick up the keys."
+        },
+        {
+          "nl": "We zetten het bed neer.",
+          "en": "We put the bed down."
+        }
+      ],
+      "word_ids": [
+        "w_000178",
+        "w_000162",
+        "w_000144"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000024",
+    "week": 3,
+    "title": "G — Bijzin",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "pattern_desc_en": "Main clause + because/that + subject + verb",
+      "example": {
+        "nl": "Ik blijf thuis omdat het koud is.",
+        "en": "I stay home because it is cold."
+      },
+      "sentences": [
+        {
+          "nl": "Ik blijf thuis omdat het koud is.",
+          "en": "I stay home because it is cold."
+        },
+        {
+          "nl": "We verhuizen omdat de huur te duur is.",
+          "en": "We move because the rent is too expensive."
+        },
+        {
+          "nl": "Ik bel de verhuurder omdat de verwarming kapot is.",
+          "en": "I call the landlord because the heating is broken."
+        }
+      ],
+      "word_ids": [
+        "w_000151",
+        "w_000176",
+        "w_000155",
+        "w_000150",
+        "w_000164"
+      ]
+    },
+    "updated_at": "2026-02-19T13:00:00Z"
+  }
+]

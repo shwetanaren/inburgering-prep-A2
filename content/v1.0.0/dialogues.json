@@ -1,0 +1,139 @@
+[
+  {
+    "id": "d_000001",
+    "week": 1,
+    "scenario": "supermarket",
+    "title": "In de supermarkt",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Goedemorgen. Waar staat de melk?",
+        "en": "Good morning. Where is the milk?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "In het koelschap, bij het gangpad rechts.",
+        "en": "In the fridge aisle, on the right."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Dank u. Is de yoghurt in de aanbieding?",
+        "en": "Thank you. Is the yogurt on special?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ja, twee voor drie euro.",
+        "en": "Yes, two for three euros."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Mooi. Ik betaal straks bij de kassa.",
+        "en": "Great. I will pay at the checkout later."
+      },
+      {
+        "speaker": "Kassamedewerker",
+        "nl": "Dat is twaalf vijftig. Pinnen of contant?",
+        "en": "That is twelve fifty. Card or cash?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ik pin, graag.",
+        "en": "I will pay by card, please."
+      },
+      {
+        "speaker": "Kassamedewerker",
+        "nl": "Hier is uw bon. Fijne dag!",
+        "en": "Here is your receipt. Have a nice day!"
+      }
+    ],
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "d_000002",
+    "week": 2,
+    "scenario": "gemeente",
+    "title": "Bij de gemeente",
+    "lines": [
+      {
+        "speaker": "Bezoeker",
+        "nl": "Goedemorgen. Ik wil me inschrijven.",
+        "en": "Good morning. I want to register."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u een afspraak?",
+        "en": "Do you have an appointment?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ja, om tien uur. Hier is mijn paspoort.",
+        "en": "Yes, at ten o'clock. Here is my passport."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dank u. Heeft u ook een bewijs van adres?",
+        "en": "Thank you. Do you also have proof of address?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ja, hier is een kopie.",
+        "en": "Yes, here is a copy."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Prima. Wilt u dit formulier invullen en daar wachten?",
+        "en": "Great. Would you like to fill in this form and wait over there?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ja, graag.",
+        "en": "Yes, please."
+      }
+    ],
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "d_000003",
+    "week": 3,
+    "scenario": "housing",
+    "title": "Op zoek naar een woning",
+    "lines": [
+      {
+        "speaker": "Huurder",
+        "nl": "Goedemiddag. Ik zoek een appartement.",
+        "en": "Good afternoon. I am looking for an apartment."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "In welke buurt wilt u wonen?",
+        "en": "In which neighborhood do you want to live?"
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Graag in het centrum, dicht bij de winkels.",
+        "en": "Preferably in the center, close to the shops."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "De huur is 900 euro per maand en de borg is één maand.",
+        "en": "The rent is 900 euros per month and the deposit is one month."
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Kan ik de woning bekijken?",
+        "en": "Can I view the home?"
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Ja, vrijdag om drie uur.",
+        "en": "Yes, Friday at three o'clock."
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Dank u wel, ik ben er.",
+        "en": "Thank you, I will be there."
+      }
+    ],
+    "updated_at": "2026-02-19T13:00:00Z"
+  }
+]

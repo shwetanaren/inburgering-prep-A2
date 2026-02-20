@@ -1044,5 +1044,1040 @@
       ]
     },
     "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "l_000025",
+    "week": 4,
+    "title": "Week 4 — School en leren",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000181",
+        "w_000182",
+        "w_000183",
+        "w_000184",
+        "w_000185",
+        "w_000189",
+        "w_000190",
+        "w_000191",
+        "w_000192",
+        "w_000193",
+        "w_000194",
+        "w_000195",
+        "w_000196",
+        "w_000197",
+        "w_000198",
+        "w_000199",
+        "w_000200",
+        "w_000201",
+        "w_000202",
+        "w_000203",
+        "w_000204",
+        "w_000205",
+        "w_000206",
+        "w_000207",
+        "w_000208",
+        "w_000209",
+        "w_000210",
+        "w_000211",
+        "w_000212",
+        "w_000213",
+        "w_000214",
+        "w_000215",
+        "w_000216",
+        "w_000217",
+        "w_000218",
+        "w_000219",
+        "w_000220",
+        "w_000221",
+        "w_000222",
+        "w_000223",
+        "w_000224",
+        "w_000225",
+        "w_000226",
+        "w_000227",
+        "w_000228",
+        "w_000229",
+        "w_000230",
+        "w_000231",
+        "w_000232",
+        "w_000233",
+        "w_000234",
+        "w_000235",
+        "w_000236",
+        "w_000237",
+        "w_000238",
+        "w_000239",
+        "w_000240",
+        "w_000244",
+        "w_000245",
+        "w_000246"
+      ],
+      "intro_nl": "Je leert basiswoorden voor school en leren.",
+      "intro_en": "You learn basic words for school and learning."
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000026",
+    "week": 4,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "pattern_desc_en": "Subject + Verb + Rest",
+      "example": {
+        "nl": "Ik leer Nederlands.",
+        "en": "I learn Dutch."
+      },
+      "sentences": [
+        {
+          "nl": "Ik leer Nederlands.",
+          "en": "I learn Dutch."
+        },
+        {
+          "nl": "De docent geeft les.",
+          "en": "The teacher gives a lesson."
+        },
+        {
+          "nl": "Ik maak huiswerk.",
+          "en": "I do homework."
+        }
+      ],
+      "word_ids": [
+        "w_000238",
+        "w_000185",
+        "w_000205"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000027",
+    "week": 4,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_title_en": "Inversion",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "pattern_desc_en": "Time/place + verb + subject",
+      "example": {
+        "nl": "Vandaag heb ik les.",
+        "en": "Today I have class."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag heb ik les.",
+          "en": "Today I have class."
+        },
+        {
+          "nl": "In het lokaal schrijf ik.",
+          "en": "In the classroom I write."
+        },
+        {
+          "nl": "Morgen maak ik een toets.",
+          "en": "Tomorrow I take a test."
+        }
+      ],
+      "word_ids": [
+        "w_000189",
+        "w_000202",
+        "w_000203"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000028",
+    "week": 4,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "Nevenschikking",
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "pattern_desc_en": "Clause + and/but/or + clause",
+      "example": {
+        "nl": "Ik lees en ik schrijf.",
+        "en": "I read and I write."
+      },
+      "sentences": [
+        {
+          "nl": "Ik lees en ik schrijf.",
+          "en": "I read and I write."
+        },
+        {
+          "nl": "De oefening is moeilijk, maar ik doe mijn best.",
+          "en": "The exercise is difficult, but I do my best."
+        },
+        {
+          "nl": "We oefenen thuis of in de klas.",
+          "en": "We practice at home or in class."
+        }
+      ],
+      "word_ids": [
+        "w_000216",
+        "w_000217",
+        "w_000206",
+        "w_000240",
+        "w_000182"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000029",
+    "week": 4,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_title_en": "Questions",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "pattern_desc_en": "Question word + verb + subject",
+      "example": {
+        "nl": "Welke les is vandaag?",
+        "en": "Which lesson is today?"
+      },
+      "sentences": [
+        {
+          "nl": "Welke les is vandaag?",
+          "en": "Which lesson is today?"
+        },
+        {
+          "nl": "Waar is het lokaal?",
+          "en": "Where is the classroom?"
+        },
+        {
+          "nl": "Hoe laat begint de toets?",
+          "en": "What time does the test start?"
+        }
+      ],
+      "word_ids": [
+        "w_000189",
+        "w_000202",
+        "w_000203",
+        "w_000227"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000030",
+    "week": 4,
+    "title": "E — Modale werkwoorden",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "pattern_desc_en": "Subject + modal + rest + infinitive",
+      "example": {
+        "nl": "Ik moet een opdracht maken.",
+        "en": "I must do an assignment."
+      },
+      "sentences": [
+        {
+          "nl": "Ik moet een opdracht maken.",
+          "en": "I must do an assignment."
+        },
+        {
+          "nl": "Kunt u het uitleggen?",
+          "en": "Can you explain it?"
+        },
+        {
+          "nl": "Ik wil mijn Nederlands verbeteren.",
+          "en": "I want to improve my Dutch."
+        }
+      ],
+      "word_ids": [
+        "w_000206",
+        "w_000208",
+        "w_000214",
+        "w_000238"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000031",
+    "week": 4,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc": "Werkwoord splitst: ik meld me aan / ik schrijf in",
+      "pattern_desc_en": "Verb splits: I register / I enroll",
+      "example": {
+        "nl": "Ik meld me aan voor de cursus.",
+        "en": "I register for the course."
+      },
+      "sentences": [
+        {
+          "nl": "Ik meld me aan voor de cursus.",
+          "en": "I register for the course."
+        },
+        {
+          "nl": "Ik schrijf me in voor de toets.",
+          "en": "I enroll for the test."
+        },
+        {
+          "nl": "Ik schrijf mijn antwoord op.",
+          "en": "I write down my answer."
+        }
+      ],
+      "word_ids": [
+        "w_000230",
+        "w_000231",
+        "w_000210"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000032",
+    "week": 4,
+    "title": "G — Bijzin",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "pattern_desc_en": "Main clause + because/that + subject + verb",
+      "example": {
+        "nl": "Ik oefen thuis omdat ik wil slagen.",
+        "en": "I practice at home because I want to pass."
+      },
+      "sentences": [
+        {
+          "nl": "Ik oefen thuis omdat ik wil slagen.",
+          "en": "I practice at home because I want to pass."
+        },
+        {
+          "nl": "Ik kom te laat omdat de bus vertraagd is.",
+          "en": "I am late because the bus is delayed."
+        },
+        {
+          "nl": "We lezen het boek omdat het examen eraan komt.",
+          "en": "We read the book because the exam is coming up."
+        }
+      ],
+      "word_ids": [
+        "w_000239",
+        "w_000235",
+        "w_000204",
+        "w_000194"
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "l_000033",
+    "week": 5,
+    "title": "Week 5 — Werk en sollicitatie",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000244",
+        "w_000245",
+        "w_000246",
+        "w_000247",
+        "w_000248",
+        "w_000249",
+        "w_000250",
+        "w_000251",
+        "w_000252",
+        "w_000253",
+        "w_000254",
+        "w_000255",
+        "w_000256",
+        "w_000257",
+        "w_000258",
+        "w_000259",
+        "w_000260",
+        "w_000261",
+        "w_000262",
+        "w_000263",
+        "w_000264",
+        "w_000265",
+        "w_000266",
+        "w_000267",
+        "w_000268",
+        "w_000269",
+        "w_000270",
+        "w_000271",
+        "w_000272",
+        "w_000273",
+        "w_000274",
+        "w_000275",
+        "w_000276",
+        "w_000277",
+        "w_000278",
+        "w_000279",
+        "w_000280",
+        "w_000281",
+        "w_000282",
+        "w_000283",
+        "w_000284",
+        "w_000285",
+        "w_000286",
+        "w_000287",
+        "w_000288",
+        "w_000289",
+        "w_000290",
+        "w_000291",
+        "w_000292",
+        "w_000293",
+        "w_000294",
+        "w_000295",
+        "w_000296",
+        "w_000297",
+        "w_000298",
+        "w_000299",
+        "w_000300",
+        "w_000301",
+        "w_000302",
+        "w_000303"
+      ],
+      "intro_nl": "Je leert basiswoorden voor werk en solliciteren.",
+      "intro_en": "You learn basic words for work and job applications."
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000034",
+    "week": 5,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "pattern_desc_en": "Subject + Verb + Rest",
+      "example": {
+        "nl": "Ik heb werk en ik leer veel.",
+        "en": "I have work and I learn a lot."
+      },
+      "sentences": [
+        {
+          "nl": "Ik heb werk en ik leer veel.",
+          "en": "I have work and I learn a lot."
+        },
+        {
+          "nl": "Mijn collega helpt mij.",
+          "en": "My colleague helps me."
+        },
+        {
+          "nl": "Ik zoek een baan.",
+          "en": "I am looking for a job."
+        }
+      ],
+      "word_ids": [
+        "w_000244",
+        "w_000263",
+        "w_000245"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000035",
+    "week": 5,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_title_en": "Inversion",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "pattern_desc_en": "Time/place + verb + subject",
+      "example": {
+        "nl": "Vandaag werk ik op kantoor.",
+        "en": "Today I work at the office."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag werk ik op kantoor.",
+          "en": "Today I work at the office."
+        },
+        {
+          "nl": "In de vergadering geef ik mijn mening.",
+          "en": "In the meeting I give my opinion."
+        },
+        {
+          "nl": "Morgen start ik om acht uur.",
+          "en": "Tomorrow I start at eight o'clock."
+        }
+      ],
+      "word_ids": [
+        "w_000285",
+        "w_000268",
+        "w_000259"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000036",
+    "week": 5,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "Nevenschikking",
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "pattern_desc_en": "Clause + and/but/or + clause",
+      "example": {
+        "nl": "Ik werk fulltime, maar mijn partner werkt parttime.",
+        "en": "I work full time, but my partner works part time."
+      },
+      "sentences": [
+        {
+          "nl": "Ik werk fulltime, maar mijn partner werkt parttime.",
+          "en": "I work full time, but my partner works part time."
+        },
+        {
+          "nl": "We hebben een team en we helpen elkaar.",
+          "en": "We have a team and we help each other."
+        },
+        {
+          "nl": "Ik neem pauze of ik ga door.",
+          "en": "I take a break or I continue."
+        }
+      ],
+      "word_ids": [
+        "w_000256",
+        "w_000257",
+        "w_000264",
+        "w_000272"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000037",
+    "week": 5,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_title_en": "Questions",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "pattern_desc_en": "Question word + verb + subject",
+      "example": {
+        "nl": "Welke vacature past bij mij?",
+        "en": "Which vacancy suits me?"
+      },
+      "sentences": [
+        {
+          "nl": "Welke vacature past bij mij?",
+          "en": "Which vacancy suits me?"
+        },
+        {
+          "nl": "Waar is het gesprek?",
+          "en": "Where is the interview?"
+        },
+        {
+          "nl": "Wanneer krijg ik mijn loonstrook?",
+          "en": "When do I get my payslip?"
+        }
+      ],
+      "word_ids": [
+        "w_000246",
+        "w_000251",
+        "w_000275"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000038",
+    "week": 5,
+    "title": "E — Modale werkwoorden",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "pattern_desc_en": "Subject + modal + rest + infinitive",
+      "example": {
+        "nl": "Ik moet een cv maken.",
+        "en": "I have to make a CV."
+      },
+      "sentences": [
+        {
+          "nl": "Ik moet een cv maken.",
+          "en": "I have to make a CV."
+        },
+        {
+          "nl": "Kunt u mijn motivatiebrief lezen?",
+          "en": "Can you read my cover letter?"
+        },
+        {
+          "nl": "Ik wil doorgroeien.",
+          "en": "I want to advance."
+        }
+      ],
+      "word_ids": [
+        "w_000248",
+        "w_000249",
+        "w_000303"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000039",
+    "week": 5,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc": "Werkwoord splitst: ik meld me ziek / ik groei door",
+      "pattern_desc_en": "Verb splits: I report sick / I advance",
+      "example": {
+        "nl": "Ik meld me ziek als ik koorts heb.",
+        "en": "I report sick if I have a fever."
+      },
+      "sentences": [
+        {
+          "nl": "Ik meld me ziek als ik koorts heb.",
+          "en": "I report sick if I have a fever."
+        },
+        {
+          "nl": "Ik groei door in het bedrijf.",
+          "en": "I advance in the company."
+        },
+        {
+          "nl": "We werken samen en we leren.",
+          "en": "We work together and we learn."
+        }
+      ],
+      "word_ids": [
+        "w_000280",
+        "w_000303",
+        "w_000300"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000040",
+    "week": 5,
+    "title": "G — Bijzin",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "pattern_desc_en": "Main clause + because/that + subject + verb",
+      "example": {
+        "nl": "Ik blijf langer, omdat er veel werk is.",
+        "en": "I stay longer because there is a lot of work."
+      },
+      "sentences": [
+        {
+          "nl": "Ik blijf langer, omdat er veel werk is.",
+          "en": "I stay longer because there is a lot of work."
+        },
+        {
+          "nl": "Ik vraag verlof, omdat ik een afspraak heb.",
+          "en": "I request leave because I have an appointment."
+        },
+        {
+          "nl": "Ik solliciteer, omdat ik een betere baan wil.",
+          "en": "I apply because I want a better job."
+        }
+      ],
+      "word_ids": [
+        "w_000244",
+        "w_000278",
+        "w_000247",
+        "w_000248",
+        "w_000245"
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "l_000041",
+    "week": 6,
+    "title": "Week 6 — Openbaar vervoer",
+    "kind": "vocab",
+    "order_index": 1,
+    "payload": {
+      "word_ids": [
+        "w_000304",
+        "w_000306",
+        "w_000307",
+        "w_000308",
+        "w_000309",
+        "w_000310",
+        "w_000311",
+        "w_000312",
+        "w_000313",
+        "w_000314",
+        "w_000315",
+        "w_000316",
+        "w_000317",
+        "w_000318",
+        "w_000319",
+        "w_000320",
+        "w_000321",
+        "w_000322",
+        "w_000323",
+        "w_000324",
+        "w_000325",
+        "w_000326",
+        "w_000327",
+        "w_000328",
+        "w_000329",
+        "w_000330",
+        "w_000331",
+        "w_000332",
+        "w_000333",
+        "w_000334",
+        "w_000335",
+        "w_000336",
+        "w_000337",
+        "w_000338",
+        "w_000339",
+        "w_000340",
+        "w_000341",
+        "w_000342",
+        "w_000343",
+        "w_000344",
+        "w_000345",
+        "w_000346",
+        "w_000347",
+        "w_000349",
+        "w_000350",
+        "w_000351",
+        "w_000352",
+        "w_000353",
+        "w_000354",
+        "w_000355",
+        "w_000356",
+        "w_000357",
+        "w_000359",
+        "w_000360",
+        "w_000361",
+        "w_000362",
+        "w_000363",
+        "w_000364",
+        "w_000365",
+        "w_000305"
+      ],
+      "intro_nl": "Je leert basiswoorden voor reizen met het openbaar vervoer.",
+      "intro_en": "You learn basic words for traveling by public transport."
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000042",
+    "week": 6,
+    "title": "A — Basiszin",
+    "kind": "sentence",
+    "order_index": 2,
+    "payload": {
+      "pattern_code": "A",
+      "pattern_title": "Basiszin",
+      "pattern_title_en": "Basic Sentence",
+      "pattern_desc": "Onderwerp + werkwoord + rest",
+      "pattern_desc_en": "Subject + Verb + Rest",
+      "example": {
+        "nl": "Ik neem de trein en ik stap in.",
+        "en": "I take the train and I get on."
+      },
+      "sentences": [
+        {
+          "nl": "Ik neem de trein en ik stap in.",
+          "en": "I take the train and I get on."
+        },
+        {
+          "nl": "De bus rijdt op tijd.",
+          "en": "The bus runs on time."
+        },
+        {
+          "nl": "Ik koop een kaartje.",
+          "en": "I buy a ticket."
+        }
+      ],
+      "word_ids": [
+        "w_000306",
+        "w_000305",
+        "w_000320"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000043",
+    "week": 6,
+    "title": "B — Inversie",
+    "kind": "sentence",
+    "order_index": 3,
+    "payload": {
+      "pattern_code": "B",
+      "pattern_title": "Inversie",
+      "pattern_title_en": "Inversion",
+      "pattern_desc": "Tijd/plaats + werkwoord + onderwerp",
+      "pattern_desc_en": "Time/place + verb + subject",
+      "example": {
+        "nl": "Vandaag reis ik met de metro.",
+        "en": "Today I travel by metro."
+      },
+      "sentences": [
+        {
+          "nl": "Vandaag reis ik met de metro.",
+          "en": "Today I travel by metro."
+        },
+        {
+          "nl": "Op het station vraag ik informatie.",
+          "en": "At the station I ask for information."
+        },
+        {
+          "nl": "Na de overstap kom ik te laat.",
+          "en": "After the transfer I arrive late."
+        }
+      ],
+      "word_ids": [
+        "w_000308",
+        "w_000310",
+        "w_000318",
+        "w_000319"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000044",
+    "week": 6,
+    "title": "C — Nevenschikking",
+    "kind": "sentence",
+    "order_index": 4,
+    "payload": {
+      "pattern_code": "C",
+      "pattern_title": "Nevenschikking",
+      "pattern_title_en": "Basic Conjunctions",
+      "pattern_desc": "Zin + en/maar/of + zin",
+      "pattern_desc_en": "Clause + and/but/or + clause",
+      "example": {
+        "nl": "De trein is vertraagd, maar ik ben op tijd.",
+        "en": "The train is delayed, but I am on time."
+      },
+      "sentences": [
+        {
+          "nl": "De trein is vertraagd, maar ik ben op tijd.",
+          "en": "The train is delayed, but I am on time."
+        },
+        {
+          "nl": "Ik check in en ik loop naar het perron.",
+          "en": "I check in and I walk to the platform."
+        },
+        {
+          "nl": "We nemen de tram of de bus.",
+          "en": "We take the tram or the bus."
+        }
+      ],
+      "word_ids": [
+        "w_000314",
+        "w_000323",
+        "w_000313",
+        "w_000309",
+        "w_000307"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000045",
+    "week": 6,
+    "title": "D — Vragen",
+    "kind": "sentence",
+    "order_index": 5,
+    "payload": {
+      "pattern_code": "D",
+      "pattern_title": "Vragen",
+      "pattern_title_en": "Questions",
+      "pattern_desc": "Vraagwoord + werkwoord + onderwerp",
+      "pattern_desc_en": "Question word + verb + subject",
+      "example": {
+        "nl": "Waar is de halte?",
+        "en": "Where is the stop?"
+      },
+      "sentences": [
+        {
+          "nl": "Waar is de halte?",
+          "en": "Where is the stop?"
+        },
+        {
+          "nl": "Wanneer vertrekt de trein?",
+          "en": "When does the train depart?"
+        },
+        {
+          "nl": "Welke lijn moet ik nemen?",
+          "en": "Which line should I take?"
+        }
+      ],
+      "word_ids": [
+        "w_000311",
+        "w_000314",
+        "w_000353"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000046",
+    "week": 6,
+    "title": "E — Modale werkwoorden",
+    "kind": "sentence",
+    "order_index": 6,
+    "payload": {
+      "pattern_code": "E",
+      "pattern_title": "Modale werkwoorden",
+      "pattern_title_en": "Modal Verbs",
+      "pattern_desc": "Onderwerp + modaal + rest + infinitief",
+      "pattern_desc_en": "Subject + modal + rest + infinitive",
+      "example": {
+        "nl": "Ik moet inchecken, anders krijg ik een boete.",
+        "en": "I must check in, otherwise I get a fine."
+      },
+      "sentences": [
+        {
+          "nl": "Ik moet inchecken, anders krijg ik een boete.",
+          "en": "I must check in, otherwise I get a fine."
+        },
+        {
+          "nl": "Kunt u mij helpen met de automaat?",
+          "en": "Can you help me with the machine?"
+        },
+        {
+          "nl": "Ik wil een retour kopen.",
+          "en": "I want to buy a return ticket."
+        }
+      ],
+      "word_ids": [
+        "w_000323",
+        "w_000333",
+        "w_000332",
+        "w_000349"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000047",
+    "week": 6,
+    "title": "F — Scheidbare werkwoorden",
+    "kind": "sentence",
+    "order_index": 7,
+    "payload": {
+      "pattern_code": "F",
+      "pattern_title": "Scheidbare werkwoorden",
+      "pattern_title_en": "Separable Verbs",
+      "pattern_desc": "Werkwoord splitst: ik check in / ik stap uit",
+      "pattern_desc_en": "Verb splits: I check in / I get off",
+      "example": {
+        "nl": "Ik stap uit bij de volgende halte.",
+        "en": "I get off at the next stop."
+      },
+      "sentences": [
+        {
+          "nl": "Ik stap uit bij de volgende halte.",
+          "en": "I get off at the next stop."
+        },
+        {
+          "nl": "Ik check uit bij het poortje.",
+          "en": "I check out at the gate."
+        },
+        {
+          "nl": "We stappen over en we lopen naar het perron.",
+          "en": "We transfer and we walk to the platform."
+        }
+      ],
+      "word_ids": [
+        "w_000324",
+        "w_000323",
+        "w_000361",
+        "w_000313"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "l_000048",
+    "week": 6,
+    "title": "G — Bijzin",
+    "kind": "sentence",
+    "order_index": 8,
+    "payload": {
+      "pattern_code": "G",
+      "pattern_title": "Bijzin",
+      "pattern_title_en": "Subordinate Clause",
+      "pattern_desc": "Hoofdzin + omdat/dat + onderwerp + werkwoord",
+      "pattern_desc_en": "Main clause + because/that + subject + verb",
+      "example": {
+        "nl": "Ik neem de bus omdat het regent.",
+        "en": "I take the bus because it is raining."
+      },
+      "sentences": [
+        {
+          "nl": "Ik neem de bus omdat het regent.",
+          "en": "I take the bus because it is raining."
+        },
+        {
+          "nl": "We missen de trein omdat er vertraging is.",
+          "en": "We miss the train because there is a delay."
+        },
+        {
+          "nl": "Ik kijk op de reisplanner omdat ik wil overstappen.",
+          "en": "I check the trip planner because I want to transfer."
+        }
+      ],
+      "word_ids": [
+        "w_000307",
+        "w_000306",
+        "w_000333",
+        "w_000363",
+        "w_000319"
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
   }
 ]

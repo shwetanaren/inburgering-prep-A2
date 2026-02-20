@@ -214,6 +214,11 @@ function utcStartMs(iso: string): number {
   return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
 }
 
+function localStartMs(iso: string): number {
+  const d = new Date(iso);
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+}
+
 async function getSettingsRow(): Promise<SettingsRow> {
   const db = await getDb();
   const row = await db.getFirstAsync<SettingsRow>(
@@ -257,7 +262,7 @@ export async function getProgress(
 ): Promise<ProgressDTO> {
   const db = await getDb();
   const nowTs = Date.parse(nowIso);
-  const startOfDayTs = utcStartMs(nowIso);
+  const startOfDayTs = localStartMs(nowIso);
 
   const dueRow = await db.getFirstAsync<{ count: number }>(
     'SELECT COUNT(*) as count FROM srs_state WHERE next_review_at_ts <= ?;',
@@ -286,6 +291,40 @@ export async function getProgress(
     lastActiveAt: appState?.last_active_at ?? null,
     lastReviewedAt: appState?.last_reviewed_at ?? null,
     contentVersion: appState?.content_version ?? 'v0.0.0',
+  };
+}
+
+export async function getThemeProgress(
+  week: number,
+  nowIso: string = new Date().toISOString()
+): Promise<{ totalWords: number; reviewedTodayCount: number; dueCount: number }> {
+  const db = await getDb();
+  const nowTs = Date.parse(nowIso);
+  const startOfDayTs = utcStartMs(nowIso);
+
+  const totalWordsRow = await db.getFirstAsync<{ count: number }>(
+    'SELECT COUNT(*) as count FROM words WHERE week = ? AND is_active = 1;',
+    [week]
+  );
+  const dueRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count
+     FROM srs_state s
+     JOIN words w ON w.id = s.word_id
+     WHERE w.week = ? AND w.is_active = 1 AND s.next_review_at_ts <= ?;`,
+    [week, nowTs]
+  );
+  const reviewedTodayRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count
+     FROM reviews_log r
+     JOIN words w ON w.id = r.word_id
+     WHERE w.week = ? AND w.is_active = 1 AND r.reviewed_at_ts >= ?;`,
+    [week, startOfDayTs]
+  );
+
+  return {
+    totalWords: Number(totalWordsRow?.count ?? 0),
+    reviewedTodayCount: Number(reviewedTodayRow?.count ?? 0),
+    dueCount: Number(dueRow?.count ?? 0),
   };
 }
 

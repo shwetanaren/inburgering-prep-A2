@@ -4,6 +4,7 @@ export {
   getReviewQueue,
   getReviewQueueByWeek,
   getProgress,
+  getThemeProgress,
   recordReview,
   getLesson,
   listLessonsByWeek,

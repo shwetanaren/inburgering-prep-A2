@@ -8,7 +8,7 @@ import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 import { useOffline } from '@/components/useOffline';
-import { DEFAULT_SRS_CONFIG, type Rating } from '@/packages/srs';
+import { type Rating } from '@/packages/srs';
 import { getReviewQueueByWeek, recordReview } from '@/packages/services';
 import type { ProgressDTO, ReviewResultDTO, TodayQueueItemDTO } from '@/packages/services';
 import { useRouter } from 'expo-router';
@@ -17,15 +17,10 @@ import { useSelectedWeek } from '@/components/WeekContext';
 type ReviewState = {
   queue: TodayQueueItemDTO[];
   index: number;
+  completedCount: number;
   flipped: boolean;
   lastResult: ReviewResultDTO | null;
   completed: boolean;
-};
-
-const ratingLabels: Record<Rating, string> = {
-  again: '<1m',
-  good: `${DEFAULT_SRS_CONFIG.intervalsDays[1] ?? 3}d`,
-  easy: `${DEFAULT_SRS_CONFIG.intervalsDays[2] ?? 7}d`,
 };
 
 export default function ReviewScreen() {
@@ -37,6 +32,7 @@ export default function ReviewScreen() {
   const [state, setState] = useState<ReviewState>({
     queue: [],
     index: 0,
+    completedCount: 0,
     flipped: false,
     lastResult: null,
     completed: false,
@@ -51,6 +47,7 @@ export default function ReviewScreen() {
         setState({
           queue,
           index: 0,
+          completedCount: 0,
           flipped: false,
           lastResult: null,
           completed: queue.length === 0,
@@ -86,14 +83,31 @@ export default function ReviewScreen() {
         rating,
         current.state?.nextReviewAt
       );
-      const nextIndex = state.index + 1;
-      setState((prev) => ({
-        ...prev,
-        index: nextIndex,
-        flipped: false,
-        lastResult: result,
-        completed: nextIndex >= prev.queue.length,
-      }));
+      setState((prev) => {
+        const queue = [...prev.queue];
+        let nextIndex = prev.index;
+        let completedCount = prev.completedCount;
+
+        if (rating === 'again') {
+          const [item] = queue.splice(prev.index, 1);
+          if (item) queue.push(item);
+          nextIndex = prev.index >= queue.length ? 0 : prev.index;
+        } else {
+          completedCount = prev.completedCount + 1;
+          nextIndex = prev.index + 1;
+          if (nextIndex >= queue.length) nextIndex = 0;
+        }
+
+        return {
+          ...prev,
+          queue,
+          index: nextIndex,
+          completedCount,
+          flipped: false,
+          lastResult: result,
+          completed: completedCount >= queue.length,
+        };
+      });
     } catch (err) {
       setError(err as Error);
     }
@@ -164,7 +178,9 @@ export default function ReviewScreen() {
             <Text className="text-[15px] font-semibold text-brand">Home</Text>
           </View>
         </Pressable>
-        <Text className="text-[12px] text-muted">{`Card ${state.index + 1} of ${total}`}</Text>
+        <Text className="text-[12px] text-muted">{`Card ${
+          Math.min(state.completedCount + 1, Math.max(total, 1))
+        } of ${total}`}</Text>
       </View>
 
       <View className="flex-1 px-5 pt-5">
@@ -218,21 +234,18 @@ export default function ReviewScreen() {
             className="flex-1 rounded-2xl border border-red-200 bg-white px-3 py-3"
           >
             <Text className="text-center text-sm font-semibold text-danger">Again</Text>
-            <Text className="text-center text-[11px] text-danger">{ratingLabels.again}</Text>
           </Pressable>
           <Pressable
             onPress={() => onRate('good')}
             className="flex-1 rounded-2xl border border-blue-200 bg-white px-3 py-3"
           >
             <Text className="text-center text-sm font-semibold text-brand">Good</Text>
-            <Text className="text-center text-[11px] text-brand">{ratingLabels.good}</Text>
           </Pressable>
           <Pressable
             onPress={() => onRate('easy')}
             className="flex-1 rounded-2xl border border-green-200 bg-white px-3 py-3"
           >
             <Text className="text-center text-sm font-semibold text-success">Easy</Text>
-            <Text className="text-center text-[11px] text-success">{ratingLabels.easy}</Text>
           </Pressable>
         </View>
       </View>

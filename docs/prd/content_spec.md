@@ -58,7 +58,7 @@ content/
     "properties": {
       "id": { "type": "string", "pattern": "^w_\\d{6}$" },
       "week": { "type": "integer", "minimum": 1, "maximum": 8 },
-      "topic": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing"] },
+      "topic": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport"] },
       "lemma": { "type": "string", "minLength": 1 },
       "article": { "type": ["string", "null"], "enum": ["de", "het", null] },
       "translation": { "type": "string", "minLength": 1 },
@@ -183,7 +183,7 @@ content/
     "properties": {
       "id": { "type": "string", "pattern": "^d_\\d{6}$" },
       "week": { "type": "integer", "minimum": 1, "maximum": 8 },
-      "scenario": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing"] },
+      "scenario": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport"] },
       "title": { "type": "string", "minLength": 1 },
       "lines": {
         "type": "array",
@@ -240,7 +240,7 @@ content/
 - Missing required fields for each entity
 - `article` in `{ "de", "het", null }`
 - `week` in range **1–8**
-- `topic` in enum `{ "supermarket", "doctor", "greetings", "gemeente", "housing" }`
+- `topic` in enum `{ "supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport" }`
 - `updated_at` matches ISO UTC `YYYY-MM-DDTHH:MM:SSZ`
 
 ## Optional Validation Script Stub

@@ -135,5 +135,122 @@
       }
     ],
     "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "d_000004",
+    "week": 4,
+    "scenario": "school",
+    "title": "In de taalcursus",
+    "lines": [
+      {
+        "speaker": "Student",
+        "nl": "Goedemorgen. Is dit lokaal B?",
+        "en": "Good morning. Is this classroom B?"
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Ja, welkom. Ben je nieuw?",
+        "en": "Yes, welcome. Are you new?"
+      },
+      {
+        "speaker": "Student",
+        "nl": "Ja, ik ben vandaag gestart.",
+        "en": "Yes, I started today."
+      },
+      {
+        "speaker": "Docent",
+        "nl": "We beginnen om negen uur en we oefenen veel.",
+        "en": "We start at nine and we practice a lot."
+      },
+      {
+        "speaker": "Student",
+        "nl": "Moet ik een boek meenemen?",
+        "en": "Do I need to bring a book?"
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Ja, en je krijgt ook huiswerk.",
+        "en": "Yes, and you will also get homework."
+      },
+      {
+        "speaker": "Student",
+        "nl": "Dank u, tot morgen.",
+        "en": "Thank you, see you tomorrow."
+      }
+    ],
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "d_000005",
+    "week": 5,
+    "scenario": "work",
+    "title": "Sollicitatiegesprek",
+    "lines": [
+      {
+        "speaker": "Recruiter",
+        "nl": "Welkom. Kunt u iets over uzelf vertellen?",
+        "en": "Welcome. Can you tell me something about yourself?"
+      },
+      {
+        "speaker": "Sollicitant",
+        "nl": "Ja, ik heb werkervaring in de horeca en ik leer snel.",
+        "en": "Yes, I have work experience in hospitality and I learn quickly."
+      },
+      {
+        "speaker": "Recruiter",
+        "nl": "Waarom solliciteert u op deze functie?",
+        "en": "Why are you applying for this position?"
+      },
+      {
+        "speaker": "Sollicitant",
+        "nl": "Ik wil graag doorgroeien en in een team werken.",
+        "en": "I want to advance and work in a team."
+      },
+      {
+        "speaker": "Recruiter",
+        "nl": "Kunt u volgende week beginnen?",
+        "en": "Can you start next week?"
+      },
+      {
+        "speaker": "Sollicitant",
+        "nl": "Ja, dat kan. Ik stuur mijn cv vandaag nog.",
+        "en": "Yes, I can. I will send my CV today."
+      }
+    ],
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "d_000006",
+    "week": 6,
+    "scenario": "transport",
+    "title": "Op het station",
+    "lines": [
+      {
+        "speaker": "Reiziger",
+        "nl": "Excuseer, op welk perron vertrekt de trein?",
+        "en": "Excuse me, from which platform does the train depart?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Perron 5. U moet wel inchecken bij het poortje.",
+        "en": "Platform 5. You do need to check in at the gate."
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Dank u. Is er vertraging?",
+        "en": "Thank you. Is there a delay?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ja, tien minuten. De omroep geeft straks meer informatie.",
+        "en": "Yes, ten minutes. The announcement will give more information shortly."
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Oké, dan wacht ik op het perron.",
+        "en": "Okay, then I will wait on the platform."
+      }
+    ],
+    "updated_at": "2026-02-19T14:30:00Z"
   }
 ]

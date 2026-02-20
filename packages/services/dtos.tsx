@@ -131,6 +131,13 @@ export type ProgressDTO = {
   contentVersion: string;
 };
 
+export type ThemeProgressDTO = {
+  week: number;
+  totalWords: number;
+  reviewedTodayCount: number;
+  dueCount: number;
+};
+
 export type ReviewResultDTO = {
   wordId: string;
   rating: Rating;

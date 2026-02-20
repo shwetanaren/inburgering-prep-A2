@@ -121,5 +121,128 @@
       ]
     },
     "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "e_000004",
+    "week": 4,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000004_i01",
+          "nl": "Ik maak het __.",
+          "answer": "huiswerk",
+          "word_id": "w_000205"
+        },
+        {
+          "id": "e_000004_i02",
+          "nl": "De __ geeft uitleg.",
+          "answer": "docent",
+          "word_id": "w_000185"
+        },
+        {
+          "id": "e_000004_i03",
+          "nl": "Ik schrijf in mijn __.",
+          "answer": "schrift",
+          "word_id": "w_000194"
+        },
+        {
+          "id": "e_000004_i04",
+          "nl": "Wanneer is de __?",
+          "answer": "toets",
+          "word_id": "w_000203"
+        },
+        {
+          "id": "e_000004_i05",
+          "nl": "We oefenen __.",
+          "answer": "thuis",
+          "word_id": "w_000240"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "e_000005",
+    "week": 5,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000005_i01",
+          "nl": "Ik schrijf een __ voor de vacature.",
+          "answer": "motivatiebrief",
+          "word_id": "w_000249"
+        },
+        {
+          "id": "e_000005_i02",
+          "nl": "Mijn __ is volgende week.",
+          "answer": "gesprek",
+          "word_id": "w_000251"
+        },
+        {
+          "id": "e_000005_i03",
+          "nl": "Ik werk __, 32 uur per week.",
+          "answer": "parttime",
+          "word_id": "w_000257"
+        },
+        {
+          "id": "e_000005_i04",
+          "nl": "Mijn __ staat op papier.",
+          "answer": "contract",
+          "word_id": "w_000277"
+        },
+        {
+          "id": "e_000005_i05",
+          "nl": "Ik krijg mijn __ aan het einde van de maand.",
+          "answer": "salaris",
+          "word_id": "w_000274"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "e_000006",
+    "week": 6,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000006_i01",
+          "nl": "Ik koop een __ bij de automaat.",
+          "answer": "kaartje",
+          "word_id": "w_000320"
+        },
+        {
+          "id": "e_000006_i02",
+          "nl": "Waar is het __?",
+          "answer": "station",
+          "word_id": "w_000310"
+        },
+        {
+          "id": "e_000006_i03",
+          "nl": "De __ is vertraagd.",
+          "answer": "trein",
+          "word_id": "w_000306"
+        },
+        {
+          "id": "e_000006_i04",
+          "nl": "Ik moet __ bij het poortje.",
+          "answer": "inchecken",
+          "word_id": "w_000323"
+        },
+        {
+          "id": "e_000006_i05",
+          "nl": "We maken een __ in Utrecht.",
+          "answer": "overstap",
+          "word_id": "w_000319"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T14:30:00Z"
   }
 ]

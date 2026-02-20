@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
 import { useOffline } from '@/components/useOffline';
-import { getTodayPlan, listDialoguesByWeek, listLessonsByWeek } from '@/packages/services';
+import { getThemeProgress, getTodayPlan, listDialoguesByWeek, listLessonsByWeek } from '@/packages/services';
 import type { DialogueSummaryDTO, LessonSummaryDTO, ProgressDTO } from '@/packages/services';
 import { useSelectedWeek } from '@/components/WeekContext';
 
@@ -23,6 +23,12 @@ export default function HomeScreen() {
   const [lessons, setLessons] = useState<LessonSummaryDTO[]>([]);
   const [dialogues, setDialogues] = useState<DialogueSummaryDTO[]>([]);
   const [weekLabels, setWeekLabels] = useState<Record<number, string>>({});
+  const [weekOpen, setWeekOpen] = useState(false);
+  const [themeProgress, setThemeProgress] = useState<{
+    totalWords: number;
+    reviewedTodayCount: number;
+    dueCount: number;
+  } | null>(null);
 
   const load = useCallback(() => {
     setLoading(true);
@@ -31,11 +37,13 @@ export default function HomeScreen() {
       getTodayPlan(),
       listLessonsByWeek(selectedWeek),
       listDialoguesByWeek(selectedWeek),
+      getThemeProgress(selectedWeek),
     ])
-      .then(([plan, lessonRows, dialogueRows]) => {
+      .then(([plan, lessonRows, dialogueRows, themeProg]) => {
         setProgress(plan.progress);
         setLessons(lessonRows);
         setDialogues(dialogueRows);
+        setThemeProgress(themeProg);
       })
       .catch((err: Error) => setError(err))
       .finally(() => setLoading(false));
@@ -93,9 +101,9 @@ export default function HomeScreen() {
     );
   }
 
-  const reviewCount = progress.reviewsTodayCount;
-  const goal = progress.dailyGoal;
-  const dueCount = progress.dueCount;
+  const reviewCount = themeProgress?.reviewedTodayCount ?? 0;
+  const goal = themeProgress?.totalWords ?? 0;
+  const dueCount = themeProgress?.dueCount ?? 0;
   const streak = progress.streakCurrent;
   const sentenceLessons = lessons.filter((l) => l.kind === 'sentence');
   const themeLabel = weekLabels[selectedWeek] ?? `Week ${selectedWeek}`;
@@ -132,35 +140,6 @@ export default function HomeScreen() {
           <Ionicons name="settings-outline" size={20} color="#6b7280" />
         </View>
 
-        {!loadingWeeks && weeks.length >= 1 ? (
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            className="mt-4"
-          >
-            <View className="flex-row gap-2">
-              {weeks.map((week) => {
-                const isActive = week === selectedWeek;
-                const label = weekLabels[week] ?? `Week ${week}`;
-                return (
-                  <Pressable
-                    key={`week-${week}`}
-                    onPress={() => setSelectedWeek(week)}
-                    className={`rounded-full px-4 py-2 ${isActive ? 'bg-brand' : 'bg-white border border-line'}`}
-                  >
-                    <Text className={`text-[12px] font-semibold ${isActive ? 'text-white' : 'text-ink'}`}>
-                      {`Week ${week}`}
-                    </Text>
-                    <Text className={`text-[11px] ${isActive ? 'text-blue-100' : 'text-muted'}`}>
-                      {label}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </ScrollView>
-        ) : null}
-
         <Card className="mt-5 px-5 py-4">
           <View className="flex-row items-center gap-3">
             <View className="h-10 w-10 items-center justify-center rounded-full bg-orange-100">
@@ -173,11 +152,66 @@ export default function HomeScreen() {
           </View>
         </Card>
 
+        {!loadingWeeks && weeks.length >= 1 ? (
+          <Card className="mt-4 px-5 py-4">
+            <Pressable onPress={() => setWeekOpen((prev) => !prev)}>
+              <View className="flex-row items-center justify-between">
+                <View>
+                  <View className="self-start rounded-full bg-blue-100 px-3 py-1">
+                    <Text className="text-[11px] font-semibold uppercase tracking-widest text-brand">
+                      Theme
+                    </Text>
+                  </View>
+                  <Text className="mt-2 text-[15px] font-semibold text-ink">
+                    {`Week ${selectedWeek}`}
+                  </Text>
+                  <Text className="mt-1 text-[12px] text-muted">
+                    {weekLabels[selectedWeek] ?? `Week ${selectedWeek}`}
+                  </Text>
+                </View>
+                <Ionicons
+                  name={weekOpen ? 'chevron-up' : 'chevron-down'}
+                  size={18}
+                  color="#9ca3af"
+                />
+              </View>
+            </Pressable>
+
+            {weekOpen ? (
+              <View className="mt-4 border-t border-line pt-3">
+                {weeks.map((week) => {
+                  const isActive = week === selectedWeek;
+                  return (
+                    <Pressable
+                      key={`week-option-${week}`}
+                      onPress={() => {
+                        setSelectedWeek(week);
+                        setWeekOpen(false);
+                      }}
+                      className={`rounded-xl px-3 py-2 ${isActive ? 'bg-blue-50' : ''}`}
+                    >
+                      <Text className={`text-[13px] font-semibold ${isActive ? 'text-brand' : 'text-ink'}`}>
+                        {`Week ${week}`}
+                      </Text>
+                      <Text className={`text-[12px] ${isActive ? 'text-brand' : 'text-muted'}`}>
+                        {weekLabels[week] ?? `Week ${week}`}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
+              </View>
+            ) : null}
+          </Card>
+        ) : null}
+
         <Card className="mt-4 px-5 py-4">
           <View className="flex-row items-center justify-between">
-            <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
-              Today’s Goal
-            </Text>
+            <View className="flex-row items-center gap-2">
+              <Ionicons name="grid-outline" size={14} color="#4b5563" />
+              <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
+                Words
+              </Text>
+            </View>
             <Text className="text-[15px] font-semibold text-brand">{`${reviewCount} / ${goal}`}</Text>
           </View>
           <View className="mt-3 h-2 w-full rounded-full bg-slate-200">
@@ -198,9 +232,9 @@ export default function HomeScreen() {
         <Pressable onPress={() => router.push('/lesson')} className="mt-4">
           <Card>
             <View className="flex-row items-center gap-2">
-              <Ionicons name="book-outline" size={14} color="#4b5563" />
+              <Ionicons name="document-text-outline" size={14} color="#4b5563" />
               <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
-                Lesson
+                Sentences
               </Text>
             </View>
             <Text className="mt-2 text-[15px] font-semibold text-ink">{lessonTitle}</Text>

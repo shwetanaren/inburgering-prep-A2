@@ -1,29 +1,29 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ScrollView, Text, View, Pressable } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import { Screen } from '@/components/ui/Screen';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
-import { ProgressBar } from '@/components/ui/ProgressBar';
 import { useOffline } from '@/components/useOffline';
-import { getProgress } from '@/packages/services';
-import type { ProgressDTO } from '@/packages/services';
+import { getProgress, getWeeklyActivity } from '@/packages/services';
+import type { ActivitySummaryDTO, ProgressDTO } from '@/packages/services';
 
 export default function ProgressScreen() {
   const { isOffline } = useOffline();
-  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const [summary, setSummary] = useState<ActivitySummaryDTO | null>(null);
   const [progress, setProgress] = useState<ProgressDTO | null>(null);
 
   const load = useCallback(() => {
     setLoading(true);
     setError(null);
-    getProgress()
-      .then((data) => setProgress(data))
+    Promise.all([getWeeklyActivity(6), getProgress()])
+      .then(([activity, prog]) => {
+        setSummary(activity);
+        setProgress(prog);
+      })
       .catch((err: Error) => setError(err))
       .finally(() => setLoading(false));
   }, []);
@@ -53,7 +53,7 @@ export default function ProgressScreen() {
     );
   }
 
-  if (!progress) {
+  if (!summary || !progress) {
     return (
       <Screen>
         <EmptyState title="No progress yet" description="Complete a review to see stats." />
@@ -61,54 +61,84 @@ export default function ProgressScreen() {
     );
   }
 
+  const maxTotal = Math.max(1, ...summary.weeks.map((w) => w.total));
+
   return (
     <Screen>
       <OfflineBanner visible={isOffline} />
       <ScrollView className="flex-1 px-5">
-        <View className="mt-4 flex-row items-center justify-end">
-          <Pressable>
-            <Ionicons name="close" size={20} color="#9ca3af" />
-          </Pressable>
+        <View className="mt-5 flex-row items-center gap-2">
+          <Ionicons name="stats-chart" size={18} color="#2f6cf6" />
+          <Text className="text-[17px] font-semibold text-ink">Progress</Text>
         </View>
 
-        <View className="mt-2 items-center">
-          <View className="h-16 w-16 items-center justify-center rounded-full bg-green-100">
-            <Ionicons name="checkmark" size={32} color="#22c55e" />
-          </View>
-          <Text className="mt-5 text-[22px] font-semibold text-ink">Review Complete!</Text>
-          <Text className="mt-2 text-[13px] text-muted">Great job staying on track.</Text>
-        </View>
-
-        <Card className="mt-6">
-          <View className="flex-row items-center justify-between">
-            <View className="items-center">
-              <Text className="text-[16px] font-semibold text-warning">
-                🔥 {progress.streakCurrent}
-              </Text>
-              <Text className="text-[11px] text-muted">Streak</Text>
+        <Card className="mt-5 px-5 py-4">
+          <View className="flex-row items-center gap-3">
+            <View className="h-10 w-10 items-center justify-center rounded-full bg-orange-100">
+              <Text className="text-[18px]">🔥</Text>
             </View>
-            <View className="items-center">
-              <Text className="text-[16px] font-semibold text-ink">
-                {progress.reviewsTodayCount}
-              </Text>
-              <Text className="text-[11px] text-muted">Cards</Text>
-            </View>
-            <View className="items-center">
-              <Text className="text-[16px] font-semibold text-brand">{progress.dueCount}</Text>
-              <Text className="text-[11px] text-muted">Due</Text>
+            <View>
+              <Text className="text-[15px] font-semibold text-ink">{`${progress.streakCurrent}-day streak`}</Text>
+              <Text className="text-[12px] text-muted">{`Best: ${progress.streakBest} days`}</Text>
             </View>
           </View>
         </Card>
 
-        <View className="mt-6">
-          <ProgressBar value={progress.reviewsTodayCount} total={progress.dailyGoal} />
-          <Text className="mt-3 text-center text-[12px] text-muted">
-            Next review in ~4 hours
-          </Text>
-        </View>
+        <Card className="mt-4 px-5 py-4">
+          <Text className="text-[13px] font-semibold text-ink">Last 90 days activity</Text>
+          <View className="mt-4 flex-row items-center justify-between">
+            <View className="items-center">
+              <Text className="text-[16px] font-semibold text-brand">{summary.totals.words}</Text>
+              <Text className="text-[11px] text-muted">Words</Text>
+            </View>
+            <View className="items-center">
+              <Text className="text-[16px] font-semibold text-amber-600">{summary.totals.sentences}</Text>
+              <Text className="text-[11px] text-muted">Sentences</Text>
+            </View>
+            <View className="items-center">
+              <Text className="text-[16px] font-semibold text-emerald-600">{summary.totals.dialogues}</Text>
+              <Text className="text-[11px] text-muted">Dialogues</Text>
+            </View>
+          </View>
+        </Card>
 
-        <Button className="mt-8" label="Back to Home" onPress={() => router.push('/')} />
-        <View className="mt-3" />
+        <Card className="mt-4 px-5 py-4">
+          <Text className="text-[13px] font-semibold text-ink">Weekly activity</Text>
+          <Text className="mt-1 text-[12px] text-muted">Last 6 weeks</Text>
+          <View className="mt-4 flex-row items-end justify-between">
+            {summary.weeks.map((week) => {
+              const heightTotal = Math.max(8, Math.round((week.total / maxTotal) * 140));
+              const wordsH = Math.round((week.words / Math.max(week.total, 1)) * heightTotal);
+              const sentencesH = Math.round((week.sentences / Math.max(week.total, 1)) * heightTotal);
+              const dialoguesH = Math.max(0, heightTotal - wordsH - sentencesH);
+              return (
+                <View key={week.weekStartMs} className="items-center">
+                  <View className="w-6 rounded-full bg-blue-100" style={{ height: 150, overflow: 'hidden' }}>
+                    <View style={{ height: 150 - heightTotal }} />
+                    <View style={{ height: wordsH }} className="w-6 bg-brand" />
+                    <View style={{ height: sentencesH }} className="w-6 bg-amber-500" />
+                    <View style={{ height: dialoguesH }} className="w-6 bg-emerald-500" />
+                  </View>
+                  <Text className="mt-2 text-[10px] text-muted">{week.label}</Text>
+                </View>
+              );
+            })}
+          </View>
+          <View className="mt-4 flex-row items-center justify-between">
+            <View className="flex-row items-center gap-2">
+              <View className="h-2 w-2 rounded-full bg-brand" />
+              <Text className="text-[11px] text-muted">Words</Text>
+            </View>
+            <View className="flex-row items-center gap-2">
+              <View className="h-2 w-2 rounded-full bg-amber-500" />
+              <Text className="text-[11px] text-muted">Sentences</Text>
+            </View>
+            <View className="flex-row items-center gap-2">
+              <View className="h-2 w-2 rounded-full bg-emerald-500" />
+              <Text className="text-[11px] text-muted">Dialogues</Text>
+            </View>
+          </View>
+        </Card>
       </ScrollView>
     </Screen>
   );

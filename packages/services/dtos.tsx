@@ -138,6 +138,14 @@ export type ThemeProgressDTO = {
   dueCount: number;
 };
 
+export type ContentKind = 'sentence' | 'dialogue';
+
+export type ContentProgressDTO = {
+  totalCount: number;
+  reviewedTodayCount: number;
+  dueCount: number;
+};
+
 export type ReviewResultDTO = {
   wordId: string;
   rating: Rating;
@@ -148,6 +156,36 @@ export type ReviewResultDTO = {
   nextReviewAt: string;
   state: SrsStateDTO;
   progress: ProgressDTO;
+};
+
+export type ContentReviewResultDTO = {
+  contentId: string;
+  kind: ContentKind;
+  rating: Rating;
+  prevBox: number;
+  nextBox: number;
+  scheduledAt: string;
+  reviewedAt: string;
+  nextReviewAt: string;
+};
+
+export type WeeklyActivityDTO = {
+  weekStartMs: number;
+  label: string;
+  words: number;
+  sentences: number;
+  dialogues: number;
+  total: number;
+};
+
+export type ActivitySummaryDTO = {
+  weeks: WeeklyActivityDTO[];
+  totals: {
+    words: number;
+    sentences: number;
+    dialogues: number;
+    total: number;
+  };
 };
 
 export type SettingsDTO = {

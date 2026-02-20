@@ -7,12 +7,10 @@ import { Button } from '@/components/ui/Button';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
 import { useOffline } from '@/components/useOffline';
-import { getDialogue, listDialoguesByWeek } from '@/packages/services';
-import type { DialogueDTO } from '@/packages/services';
+import { getDialogue, listDialoguesByWeek, recordContentReview } from '@/packages/services';
+import type { DialogueDTO, DialogueSummaryDTO } from '@/packages/services';
 import { useRouter } from 'expo-router';
 import { useSelectedWeek } from '@/components/WeekContext';
-
-const WEEK = 1;
 
 export default function DialogueScreen() {
   const { isOffline } = useOffline();
@@ -21,17 +19,23 @@ export default function DialogueScreen() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [dialogue, setDialogue] = useState<DialogueDTO | null>(null);
+  const [dialogues, setDialogues] = useState<DialogueSummaryDTO[]>([]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [saved, setSaved] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
       const summaries = await listDialoguesByWeek(selectedWeek);
+      setDialogues(summaries);
       const first = summaries[0];
-      if (!first) {
+      const nextId = selectedId ?? first?.id ?? null;
+      setSelectedId(nextId);
+      if (!nextId) {
         setDialogue(null);
       } else {
-        const full = await getDialogue(first.id);
+        const full = await getDialogue(nextId);
         setDialogue(full);
       }
     } catch (err) {
@@ -39,7 +43,7 @@ export default function DialogueScreen() {
     } finally {
       setLoading(false);
     }
-  }, [selectedWeek]);
+  }, [selectedId, selectedWeek]);
 
   useEffect(() => {
     load();
@@ -74,6 +78,9 @@ export default function DialogueScreen() {
     );
   }
 
+  const currentIndex = dialogues.findIndex((d) => d.id === selectedId);
+  const isLast = currentIndex === dialogues.length - 1;
+
   return (
     <Screen>
       <OfflineBanner visible={isOffline} />
@@ -84,6 +91,38 @@ export default function DialogueScreen() {
           </Pressable>
           <Text className="text-[15px] font-semibold text-ink">{dialogue.title}</Text>
         </View>
+
+        {dialogues.length > 1 ? (
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-4">
+            <View className="flex-row gap-2">
+              {dialogues.map((item) => {
+                const isActive = item.id === selectedId;
+                return (
+                  <Pressable
+                    key={item.id}
+                    onPress={async () => {
+                      setSelectedId(item.id);
+                      const full = await getDialogue(item.id);
+                      setDialogue(full);
+                      setSaved(false);
+                    }}
+                    className={`rounded-full px-4 py-2 ${
+                      isActive ? 'bg-brand' : 'bg-white border border-line'
+                    }`}
+                  >
+                    <Text
+                      className={`text-[12px] font-semibold ${
+                        isActive ? 'text-white' : 'text-ink'
+                      }`}
+                    >
+                      {item.title}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </ScrollView>
+        ) : null}
 
         <View className="mt-4 items-center">
           <View className="rounded-full bg-slate-200 px-4 py-2">
@@ -127,7 +166,37 @@ export default function DialogueScreen() {
           );
         })}
 
-        <Button className="mt-8" label="Finish Practice" onPress={() => {}} />
+        {saved ? (
+          <Text className="mt-6 text-center text-[11px] font-semibold text-green-600">
+            Saved
+          </Text>
+        ) : null}
+        <Button
+          className="mt-4"
+          variant={saved && isLast ? 'success' : isLast ? 'secondary' : 'primary'}
+          label={
+            saved && isLast
+              ? 'Completed'
+              : isLast
+                ? 'Mark Complete'
+                : 'Next Dialogue'
+          }
+          onPress={async () => {
+            if (!dialogue) return;
+            await recordContentReview(dialogue.id, 'dialogue', 'good');
+            if (isLast) {
+              setSaved(true);
+              return;
+            }
+            const next = dialogues[currentIndex + 1];
+            if (next) {
+              const full = await getDialogue(next.id);
+              setSelectedId(next.id);
+              setDialogue(full);
+              setSaved(false);
+            }
+          }}
+        />
       </ScrollView>
     </Screen>
   );

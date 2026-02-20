@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useFocusEffect } from '@react-navigation/native';
 
 import { Card } from '@/components/ui/Card';
 import { Screen } from '@/components/ui/Screen';
@@ -9,8 +10,19 @@ import { Button } from '@/components/ui/Button';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
 import { useOffline } from '@/components/useOffline';
-import { getThemeProgress, getTodayPlan, listDialoguesByWeek, listLessonsByWeek } from '@/packages/services';
-import type { DialogueSummaryDTO, LessonSummaryDTO, ProgressDTO } from '@/packages/services';
+import {
+  getContentProgress,
+  getThemeProgress,
+  getTodayPlan,
+  listDialoguesByWeek,
+  listLessonsByWeek,
+} from '@/packages/services';
+import type {
+  ContentProgressDTO,
+  DialogueSummaryDTO,
+  LessonSummaryDTO,
+  ProgressDTO,
+} from '@/packages/services';
 import { useSelectedWeek } from '@/components/WeekContext';
 
 export default function HomeScreen() {
@@ -29,6 +41,8 @@ export default function HomeScreen() {
     reviewedTodayCount: number;
     dueCount: number;
   } | null>(null);
+  const [sentenceProgress, setSentenceProgress] = useState<ContentProgressDTO | null>(null);
+  const [dialogueProgress, setDialogueProgress] = useState<ContentProgressDTO | null>(null);
 
   const load = useCallback(() => {
     setLoading(true);
@@ -38,12 +52,16 @@ export default function HomeScreen() {
       listLessonsByWeek(selectedWeek),
       listDialoguesByWeek(selectedWeek),
       getThemeProgress(selectedWeek),
+      getContentProgress(selectedWeek, 'sentence'),
+      getContentProgress(selectedWeek, 'dialogue'),
     ])
-      .then(([plan, lessonRows, dialogueRows, themeProg]) => {
+      .then(([plan, lessonRows, dialogueRows, themeProg, sentenceProg, dialogueProg]) => {
         setProgress(plan.progress);
         setLessons(lessonRows);
         setDialogues(dialogueRows);
         setThemeProgress(themeProg);
+        setSentenceProgress(sentenceProg);
+        setDialogueProgress(dialogueProg);
       })
       .catch((err: Error) => setError(err))
       .finally(() => setLoading(false));
@@ -52,6 +70,12 @@ export default function HomeScreen() {
   useEffect(() => {
     load();
   }, [load]);
+
+  useFocusEffect(
+    useCallback(() => {
+      load();
+    }, [load])
+  );
 
   useEffect(() => {
     if (weeks.length === 0) return;
@@ -109,21 +133,25 @@ export default function HomeScreen() {
   const themeLabel = weekLabels[selectedWeek] ?? `Week ${selectedWeek}`;
   const lessonTitle =
     sentenceLessons.length > 0 ? `Week ${selectedWeek}: ${themeLabel} A-G` : `Week ${selectedWeek}`;
-  const lessonStatus = sentenceLessons[0]?.progressStatus ?? 'not_started';
-  const statusLabel =
-    lessonStatus === 'done' ? 'Done' : lessonStatus === 'in_progress' ? 'In progress' : 'Not started';
-  const statusBg =
-    lessonStatus === 'done'
-      ? 'bg-green-100'
-      : lessonStatus === 'in_progress'
-        ? 'bg-amber-100'
-        : 'bg-slate-100';
-  const statusText =
-    lessonStatus === 'done'
-      ? 'text-green-700'
-      : lessonStatus === 'in_progress'
-        ? 'text-amber-700'
-        : 'text-slate-600';
+  const getPill = (reviewed: number, total: number) => {
+    if (total <= 0 || reviewed <= 0) {
+      return { label: 'Not started', bg: 'bg-slate-100', text: 'text-slate-600' };
+    }
+    if (reviewed >= total) {
+      return { label: 'Done today', bg: 'bg-green-100', text: 'text-green-700' };
+    }
+    return { label: 'In progress', bg: 'bg-amber-100', text: 'text-amber-700' };
+  };
+
+  const wordsPill = getPill(reviewCount, goal);
+  const sentencePill = getPill(
+    sentenceProgress?.reviewedTodayCount ?? 0,
+    sentenceProgress?.totalCount ?? 0
+  );
+  const dialoguePill = getPill(
+    dialogueProgress?.reviewedTodayCount ?? 0,
+    dialogueProgress?.totalCount ?? 0
+  );
   const dialogue = dialogues[0];
 
   return (
@@ -204,12 +232,13 @@ export default function HomeScreen() {
           </Card>
         ) : null}
 
-        <Card className="mt-4 px-5 py-4">
+        <Pressable onPress={() => router.push('/review')} className="mt-4">
+          <Card className="px-5 py-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-row items-center gap-2">
               <Ionicons name="grid-outline" size={14} color="#4b5563" />
               <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
-                Words
+                Learn Words
               </Text>
             </View>
             <Text className="text-[15px] font-semibold text-brand">{`${reviewCount} / ${goal}`}</Text>
@@ -220,28 +249,50 @@ export default function HomeScreen() {
               style={{ width: `${Math.min(100, Math.round((reviewCount / Math.max(goal, 1)) * 100))}%` }}
             />
           </View>
-          <Text className="mt-2 text-[12px] text-muted">{`${dueCount} words due`}</Text>
-          <Button
-            className="mt-4"
-            label="Start Review"
-            onPress={() => router.push('/review')}
-            rightIcon={<Ionicons name="arrow-forward" size={16} color="#fff" />}
-          />
-        </Card>
+          <View className="mt-3 flex-row items-center justify-between">
+            <View className={`rounded-full px-3 py-1 ${wordsPill.bg}`}>
+              <Text className={`text-[11px] font-semibold ${wordsPill.text}`}>
+                {wordsPill.label}
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={18} color="#9ca3af" />
+          </View>
+          </Card>
+        </Pressable>
 
         <Pressable onPress={() => router.push('/lesson')} className="mt-4">
           <Card>
             <View className="flex-row items-center gap-2">
               <Ionicons name="document-text-outline" size={14} color="#4b5563" />
               <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
-                Sentences
+                Build Sentences
               </Text>
             </View>
             <Text className="mt-2 text-[15px] font-semibold text-ink">{lessonTitle}</Text>
             <Text className="mt-1 text-[12px] text-muted">A‑G sentence framework</Text>
+            <View className="mt-3 h-2 w-full rounded-full bg-slate-200">
+              <View
+                className="h-2 rounded-full bg-brand"
+                style={{
+                  width: `${Math.min(
+                    100,
+                    Math.round(
+                      ((sentenceProgress?.reviewedTodayCount ?? 0) /
+                        Math.max(sentenceProgress?.totalCount ?? 0, 1)) *
+                        100
+                    )
+                  )}%`,
+                }}
+              />
+            </View>
+            <Text className="mt-2 text-[12px] text-muted">
+              {`${sentenceProgress?.reviewedTodayCount ?? 0} / ${sentenceProgress?.totalCount ?? 0} practiced today`}
+            </Text>
             <View className="mt-3 flex-row items-center justify-between">
-              <View className={`rounded-full px-3 py-1 ${statusBg}`}>
-              <Text className={`text-[11px] font-semibold ${statusText}`}>{statusLabel}</Text>
+              <View className={`rounded-full px-3 py-1 ${sentencePill.bg}`}>
+              <Text className={`text-[11px] font-semibold ${sentencePill.text}`}>
+                {sentencePill.label}
+              </Text>
               </View>
               <Ionicons name="chevron-forward" size={18} color="#9ca3af" />
             </View>
@@ -253,7 +304,7 @@ export default function HomeScreen() {
             <View className="flex-row items-center gap-2">
               <Ionicons name="chatbubble-ellipses-outline" size={14} color="#4b5563" />
               <Text className="text-[11px] font-semibold uppercase tracking-widest text-muted">
-                Dialogue
+                Speak Dialogues
               </Text>
             </View>
             <Text className="mt-2 text-[12px] text-muted">
@@ -262,7 +313,30 @@ export default function HomeScreen() {
             <Text className="mt-1 text-[15px] font-semibold text-ink">
               {dialogue?.title ?? 'No dialogue yet'}
             </Text>
-            <View className="mt-3 flex-row items-center justify-end">
+            <View className="mt-3 h-2 w-full rounded-full bg-slate-200">
+              <View
+                className="h-2 rounded-full bg-brand"
+                style={{
+                  width: `${Math.min(
+                    100,
+                    Math.round(
+                      ((dialogueProgress?.reviewedTodayCount ?? 0) /
+                        Math.max(dialogueProgress?.totalCount ?? 0, 1)) *
+                        100
+                    )
+                  )}%`,
+                }}
+              />
+            </View>
+            <Text className="mt-2 text-[12px] text-muted">
+              {`${dialogueProgress?.reviewedTodayCount ?? 0} / ${dialogueProgress?.totalCount ?? 0} practiced today`}
+            </Text>
+            <View className="mt-3 flex-row items-center justify-between">
+              <View className={`rounded-full px-3 py-1 ${dialoguePill.bg}`}>
+                <Text className={`text-[11px] font-semibold ${dialoguePill.text}`}>
+                  {dialoguePill.label}
+                </Text>
+              </View>
               <Ionicons name="chevron-forward" size={18} color="#9ca3af" />
             </View>
           </Card>

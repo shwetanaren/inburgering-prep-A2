@@ -4,7 +4,7 @@ import { Pressable, Text, View } from 'react-native';
 type ButtonProps = {
   label: string;
   onPress?: () => void;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'success';
   rightIcon?: React.ReactNode;
   className?: string;
 };
@@ -21,9 +21,17 @@ export function Button({
       ? 'bg-brand'
       : variant === 'secondary'
         ? 'bg-white border border-brand'
-        : 'bg-transparent';
+        : variant === 'success'
+          ? 'bg-brand'
+          : 'bg-transparent';
   const text =
-    variant === 'primary' ? 'text-white' : variant === 'secondary' ? 'text-brand' : 'text-ink';
+    variant === 'primary'
+      ? 'text-white'
+      : variant === 'secondary'
+        ? 'text-brand'
+        : variant === 'success'
+          ? 'text-white'
+          : 'text-ink';
 
   return (
     <Pressable

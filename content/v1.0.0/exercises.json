@@ -244,5 +244,169 @@
       ]
     },
     "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "e_000007",
+    "week": 7,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000007_i01",
+          "nl": "Mijn __ is laag, dus ik laad op.",
+          "answer": "saldo",
+          "word_id": "w_000373"
+        },
+        {
+          "id": "e_000007_i02",
+          "nl": "Ik betaal de __ op tijd.",
+          "answer": "factuur",
+          "word_id": "w_000407"
+        },
+        {
+          "id": "e_000007_i03",
+          "nl": "Ik wil contant __ bij de automaat.",
+          "answer": "opnemen",
+          "word_id": "w_000380"
+        },
+        {
+          "id": "e_000007_i04",
+          "nl": "Ik heb mijn pas __.",
+          "answer": "verliezen",
+          "word_id": "w_000416"
+        },
+        {
+          "id": "e_000007_i05",
+          "nl": "De __ komt elke maand.",
+          "answer": "uitbetaling",
+          "word_id": "w_000426"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T15:00:00Z"
+  },
+  {
+    "id": "e_000008",
+    "week": 8,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000008_i01",
+          "nl": "Ik koop een __ voor de brief.",
+          "answer": "postzegel",
+          "word_id": "w_000434"
+        },
+        {
+          "id": "e_000008_i02",
+          "nl": "Waar is het __?",
+          "answer": "postkantoor",
+          "word_id": "w_000428"
+        },
+        {
+          "id": "e_000008_i03",
+          "nl": "De __ komt morgen.",
+          "answer": "bezorger",
+          "word_id": "w_000442"
+        },
+        {
+          "id": "e_000008_i04",
+          "nl": "Ik moet het pakket __.",
+          "answer": "verpakken",
+          "word_id": "w_000483"
+        },
+        {
+          "id": "e_000008_i05",
+          "nl": "Ik wil mijn pakket __.",
+          "answer": "ophalen",
+          "word_id": "w_000444"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T15:30:00Z"
+  },
+  {
+    "id": "e_000009",
+    "week": 9,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000009_i01",
+          "nl": "De __ is rustig in de avond.",
+          "answer": "buurt",
+          "word_id": "w_000490"
+        },
+        {
+          "id": "e_000009_i02",
+          "nl": "Ik doe het glas in de __.",
+          "answer": "glasbak",
+          "word_id": "w_000513"
+        },
+        {
+          "id": "e_000009_i03",
+          "nl": "Ik ga naar het __ om te lezen.",
+          "answer": "bibliotheek",
+          "word_id": "w_000503"
+        },
+        {
+          "id": "e_000009_i04",
+          "nl": "Ik maak een __ over lawaai.",
+          "answer": "klacht",
+          "word_id": "w_000531"
+        },
+        {
+          "id": "e_000009_i05",
+          "nl": "We zetten de __ buiten.",
+          "answer": "container",
+          "word_id": "w_000512"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T16:00:00Z"
+  },
+  {
+    "id": "e_000010",
+    "week": 10,
+    "kind": "fill",
+    "prompt": "Vul het juiste woord in.",
+    "data": {
+      "items": [
+        {
+          "id": "e_000010_i01",
+          "nl": "Ik heb __ in mijn keel.",
+          "answer": "keelpijn",
+          "word_id": "w_000563"
+        },
+        {
+          "id": "e_000010_i02",
+          "nl": "Ik haal mijn __ bij de apotheek.",
+          "answer": "recept",
+          "word_id": "w_000570"
+        },
+        {
+          "id": "e_000010_i03",
+          "nl": "De __ is hoog.",
+          "answer": "bloeddruk",
+          "word_id": "w_000581"
+        },
+        {
+          "id": "e_000010_i04",
+          "nl": "Ik wil een __ maken.",
+          "answer": "afspraak",
+          "word_id": "w_000554"
+        },
+        {
+          "id": "e_000010_i05",
+          "nl": "Ik ga naar de __.",
+          "answer": "apotheek",
+          "word_id": "w_000552"
+        }
+      ]
+    },
+    "updated_at": "2026-02-19T16:30:00Z"
   }
 ]

@@ -252,5 +252,876 @@
       }
     ],
     "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "d_000007",
+    "week": 1,
+    "scenario": "supermarket",
+    "title": "Waar vind ik het?",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Goedemiddag. Waar kan ik de rijst vinden?",
+        "en": "Good afternoon. Where can I find the rice?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "In gangpad vier, naast de pasta.",
+        "en": "In aisle four, next to the pasta."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Dank u. Is er ook volkoren?",
+        "en": "Thank you. Is there also whole‑grain?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ja, op het bovenste schap.",
+        "en": "Yes, on the top shelf."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Mooi, dan neem ik die.",
+        "en": "Great, then I will take that."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Als u hulp nodig heeft, zegt u het maar.",
+        "en": "If you need help, just say so."
+      }
+    ],
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "d_000008",
+    "week": 1,
+    "scenario": "supermarket",
+    "title": "Iets terugbrengen",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Hallo, ik wil dit product terugbrengen.",
+        "en": "Hello, I want to return this product."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u de bon nog?",
+        "en": "Do you still have the receipt?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, hier is de bon.",
+        "en": "Yes, here is the receipt."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Wat is het probleem?",
+        "en": "What is the problem?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Het is over de datum en ik heb het net gekocht.",
+        "en": "It is past the date and I just bought it."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "U krijgt uw geld terug of ik geef u een nieuw product.",
+        "en": "You will get your money back or I can give you a new product."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Graag een nieuw product, dank u.",
+        "en": "A new product please, thank you."
+      }
+    ],
+    "updated_at": "2026-02-19T12:00:00Z"
+  },
+  {
+    "id": "d_000009",
+    "week": 2,
+    "scenario": "gemeente",
+    "title": "Adres wijzigen",
+    "lines": [
+      {
+        "speaker": "Bezoeker",
+        "nl": "Goedemiddag. Ik wil mijn adres wijzigen.",
+        "en": "Good afternoon. I want to change my address."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u een afspraak of wilt u een nummer?",
+        "en": "Do you have an appointment or do you want a number?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ik heb een afspraak om twee uur.",
+        "en": "I have an appointment at two o'clock."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Mag ik uw paspoort en een bewijs van adres?",
+        "en": "May I have your passport and proof of address?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ja, hier zijn de documenten.",
+        "en": "Yes, here are the documents."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dank u. Ik verwerk het vandaag nog.",
+        "en": "Thank you. I will process it today."
+      }
+    ],
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "d_000010",
+    "week": 2,
+    "scenario": "gemeente",
+    "title": "Paspoort aanvragen",
+    "lines": [
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ik wil een nieuw paspoort aanvragen.",
+        "en": "I want to apply for a new passport."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u een recente foto en legitimatie?",
+        "en": "Do you have a recent photo and identification?"
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Ja, ik heb alles bij me.",
+        "en": "Yes, I have everything with me."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "U kunt hier tekenen en de kosten pinnen.",
+        "en": "You can sign here and pay the costs by card."
+      },
+      {
+        "speaker": "Bezoeker",
+        "nl": "Wanneer kan ik het paspoort ophalen?",
+        "en": "When can I pick up the passport?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Over vijf werkdagen. U krijgt een bericht.",
+        "en": "In five working days. You will get a message."
+      }
+    ],
+    "updated_at": "2026-02-19T12:30:00Z"
+  },
+  {
+    "id": "d_000011",
+    "week": 3,
+    "scenario": "housing",
+    "title": "Reparatie melden",
+    "lines": [
+      {
+        "speaker": "Huurder",
+        "nl": "Goedemiddag. De verwarming is kapot.",
+        "en": "Good afternoon. The heating is broken."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Sinds wanneer werkt die niet?",
+        "en": "Since when is it not working?"
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Sinds gisteren en het is koud.",
+        "en": "Since yesterday and it is cold."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Ik stuur morgen een monteur.",
+        "en": "I will send a mechanic tomorrow."
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Dank u. Hoe laat komt hij?",
+        "en": "Thank you. What time will he come?"
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Tussen negen en twaalf uur.",
+        "en": "Between nine and twelve o'clock."
+      }
+    ],
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "d_000012",
+    "week": 3,
+    "scenario": "housing",
+    "title": "Bezichtiging plannen",
+    "lines": [
+      {
+        "speaker": "Huurder",
+        "nl": "Hallo, ik wil de woning graag bekijken.",
+        "en": "Hello, I would like to view the home."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Dat kan. Wanneer kunt u?",
+        "en": "That is possible. When can you?"
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Vrijdag om drie uur.",
+        "en": "Friday at three o'clock."
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Prima, dan zie ik u daar.",
+        "en": "Great, then I will see you there."
+      },
+      {
+        "speaker": "Huurder",
+        "nl": "Moet ik iets meenemen?",
+        "en": "Should I bring anything?"
+      },
+      {
+        "speaker": "Verhuurder",
+        "nl": "Neem uw identiteitsbewijs mee.",
+        "en": "Bring your ID."
+      }
+    ],
+    "updated_at": "2026-02-19T13:00:00Z"
+  },
+  {
+    "id": "d_000013",
+    "week": 4,
+    "scenario": "school",
+    "title": "Ziek melden",
+    "lines": [
+      {
+        "speaker": "Student",
+        "nl": "Goedemorgen. Ik ben ziek en kan niet komen.",
+        "en": "Good morning. I am sick and cannot come."
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Dank je voor het melden. Kun je het huiswerk online maken?",
+        "en": "Thanks for letting me know. Can you do the homework online?"
+      },
+      {
+        "speaker": "Student",
+        "nl": "Ja, dat kan. Waar staat de opdracht?",
+        "en": "Yes, I can. Where is the assignment?"
+      },
+      {
+        "speaker": "Docent",
+        "nl": "In het portaal, bij les 4.",
+        "en": "In the portal, at lesson 4."
+      },
+      {
+        "speaker": "Student",
+        "nl": "Dank u, ik stuur het vanavond.",
+        "en": "Thank you, I will send it tonight."
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Beterschap!",
+        "en": "Get well soon!"
+      }
+    ],
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "d_000014",
+    "week": 4,
+    "scenario": "school",
+    "title": "Toets bespreken",
+    "lines": [
+      {
+        "speaker": "Student",
+        "nl": "Ik heb een vraag over de toets.",
+        "en": "I have a question about the test."
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Natuurlijk, wat wil je weten?",
+        "en": "Of course, what do you want to know?"
+      },
+      {
+        "speaker": "Student",
+        "nl": "Hoeveel vragen zijn er en hoe lang duurt het?",
+        "en": "How many questions are there and how long does it take?"
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Er zijn twintig vragen en je hebt zestig minuten.",
+        "en": "There are twenty questions and you have sixty minutes."
+      },
+      {
+        "speaker": "Student",
+        "nl": "Oké, ik ga extra oefenen.",
+        "en": "Okay, I will practice extra."
+      },
+      {
+        "speaker": "Docent",
+        "nl": "Goed plan. Succes!",
+        "en": "Good plan. Good luck!"
+      }
+    ],
+    "updated_at": "2026-02-19T13:30:00Z"
+  },
+  {
+    "id": "d_000015",
+    "week": 5,
+    "scenario": "work",
+    "title": "Rooster en dienst",
+    "lines": [
+      {
+        "speaker": "Werknemer",
+        "nl": "Wanneer is mijn volgende dienst?",
+        "en": "When is my next shift?"
+      },
+      {
+        "speaker": "Leidinggevende",
+        "nl": "Volgens het rooster op dinsdag om acht uur.",
+        "en": "According to the schedule on Tuesday at eight."
+      },
+      {
+        "speaker": "Werknemer",
+        "nl": "Kan ik ruilen, want ik heb een afspraak?",
+        "en": "Can I swap, because I have an appointment?"
+      },
+      {
+        "speaker": "Leidinggevende",
+        "nl": "Als je een collega vindt, is dat goed.",
+        "en": "If you find a colleague, that is fine."
+      },
+      {
+        "speaker": "Werknemer",
+        "nl": "Ik vraag het meteen.",
+        "en": "I will ask right away."
+      }
+    ],
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "d_000016",
+    "week": 5,
+    "scenario": "work",
+    "title": "Ziek melden op werk",
+    "lines": [
+      {
+        "speaker": "Werknemer",
+        "nl": "Goedemorgen, ik ben ziek en kan niet komen.",
+        "en": "Good morning, I am sick and cannot come."
+      },
+      {
+        "speaker": "Leidinggevende",
+        "nl": "Dank je voor het melden. Kun je morgen weer?",
+        "en": "Thanks for letting me know. Can you come again tomorrow?"
+      },
+      {
+        "speaker": "Werknemer",
+        "nl": "Ik denk het wel, maar ik laat het weten.",
+        "en": "I think so, but I will let you know."
+      },
+      {
+        "speaker": "Leidinggevende",
+        "nl": "Goed. Beterschap.",
+        "en": "Okay. Get well soon."
+      }
+    ],
+    "updated_at": "2026-02-19T14:00:00Z"
+  },
+  {
+    "id": "d_000017",
+    "week": 6,
+    "scenario": "transport",
+    "title": "Probleem met inchecken",
+    "lines": [
+      {
+        "speaker": "Reiziger",
+        "nl": "Mijn kaart werkt niet bij het poortje.",
+        "en": "My card doesn't work at the gate."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Wat is uw saldo?",
+        "en": "What is your balance?"
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Het saldo is laag.",
+        "en": "The balance is low."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dan moet u eerst opladen bij de automaat.",
+        "en": "Then you need to top up at the machine first."
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Oké, dank u.",
+        "en": "Okay, thank you."
+      }
+    ],
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "d_000018",
+    "week": 6,
+    "scenario": "transport",
+    "title": "De juiste verbinding",
+    "lines": [
+      {
+        "speaker": "Reiziger",
+        "nl": "Welke verbinding gaat naar Rotterdam?",
+        "en": "Which connection goes to Rotterdam?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Neem lijn 5 en stap over op perron 2.",
+        "en": "Take line 5 and transfer at platform 2."
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Is er vertraging?",
+        "en": "Is there a delay?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Niet op dit moment. De vertrektijd is 14:20.",
+        "en": "Not at the moment. The departure time is 14:20."
+      },
+      {
+        "speaker": "Reiziger",
+        "nl": "Dank u, dan ga ik nu.",
+        "en": "Thank you, then I will go now."
+      }
+    ],
+    "updated_at": "2026-02-19T14:30:00Z"
+  },
+  {
+    "id": "d_000019",
+    "week": 7,
+    "scenario": "banking",
+    "title": "Nieuwe rekening openen",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Goedemiddag. Ik wil een bankrekening openen.",
+        "en": "Good afternoon. I want to open a bank account."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u een paspoort en een adresbewijs?",
+        "en": "Do you have a passport and proof of address?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, hier zijn de documenten.",
+        "en": "Yes, here are the documents."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dank u. U kunt hier tekenen.",
+        "en": "Thank you. You can sign here."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Wanneer krijg ik mijn pinpas?",
+        "en": "When do I get my debit card?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Binnen vijf werkdagen. U ontvangt ook uw pincode.",
+        "en": "Within five working days. You will also receive your PIN."
+      }
+    ],
+    "updated_at": "2026-02-19T15:00:00Z"
+  },
+  {
+    "id": "d_000020",
+    "week": 8,
+    "scenario": "post",
+    "title": "Pakket verzenden",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Goedemiddag, ik wil een pakket versturen.",
+        "en": "Good afternoon, I want to send a package."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u het pakket al ingepakt?",
+        "en": "Have you already packed the package?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, en ik heb het label erbij.",
+        "en": "Yes, and I have the label."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dan kunt u het hier wegen en betalen.",
+        "en": "Then you can weigh and pay here."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Is het mogelijk om het aangetekend te verzenden?",
+        "en": "Is it possible to send it registered?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ja, dat kan. U krijgt een bewijs van verzending.",
+        "en": "Yes, it is. You will get proof of sending."
+      }
+    ],
+    "updated_at": "2026-02-19T15:30:00Z"
+  },
+  {
+    "id": "d_000021",
+    "week": 9,
+    "scenario": "neighbourhood",
+    "title": "Afval en container",
+    "lines": [
+      {
+        "speaker": "Bewoner",
+        "nl": "Wanneer wordt het afval opgehaald?",
+        "en": "When is the waste collected?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Volgens de afvalkalender op woensdag.",
+        "en": "According to the waste calendar on Wednesday."
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "Waar zet ik de container neer?",
+        "en": "Where do I put the container?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Aan de straat, voor acht uur.",
+        "en": "On the street, before eight o'clock."
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "Dank u, dan weet ik het.",
+        "en": "Thank you, now I know."
+      }
+    ],
+    "updated_at": "2026-02-19T16:00:00Z"
+  },
+  {
+    "id": "d_000022",
+    "week": 10,
+    "scenario": "health",
+    "title": "Afspraak bij de huisarts",
+    "lines": [
+      {
+        "speaker": "Patiënt",
+        "nl": "Goedemorgen, ik heb buikpijn en koorts.",
+        "en": "Good morning, I have stomach ache and fever."
+      },
+      {
+        "speaker": "Assistente",
+        "nl": "Heeft u vandaag tijd om langs te komen?",
+        "en": "Do you have time to come in today?"
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Ja, dat kan. Hoe laat?",
+        "en": "Yes, I can. What time?"
+      },
+      {
+        "speaker": "Assistente",
+        "nl": "Om 14:30. Neem uw identiteitsbewijs mee.",
+        "en": "At 14:30. Bring your ID."
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Dank u, tot straks.",
+        "en": "Thank you, see you soon."
+      }
+    ],
+    "updated_at": "2026-02-19T16:30:00Z"
+  },
+  {
+    "id": "d_000023",
+    "week": 7,
+    "scenario": "banking",
+    "title": "Pinpas kwijt",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Ik ben mijn pinpas kwijt.",
+        "en": "I lost my debit card."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dan moet u de pas direct laten blokkeren.",
+        "en": "Then you should block the card immediately."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Kunt u dat nu doen?",
+        "en": "Can you do that now?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ja, ik blokkeer hem en u krijgt een nieuwe pas.",
+        "en": "Yes, I will block it and you will get a new card."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Dank u. Hoe lang duurt het?",
+        "en": "Thank you. How long does it take?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Ongeveer vijf werkdagen.",
+        "en": "About five working days."
+      }
+    ],
+    "updated_at": "2026-02-19T15:00:00Z"
+  },
+  {
+    "id": "d_000024",
+    "week": 7,
+    "scenario": "banking",
+    "title": "Betaling en achterstand",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Ik heb een achterstand en ik wil een regeling.",
+        "en": "I have arrears and I want a payment plan."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Wat is uw inkomen op dit moment?",
+        "en": "What is your income at the moment?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Mijn inkomen is laag, daarom lukt het niet.",
+        "en": "My income is low, therefore it doesn't work."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "We kijken naar een regeling en ik stuur u een formulier.",
+        "en": "We will look at a plan and I will send you a form."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Dank u, ik wil het graag oplossen.",
+        "en": "Thank you, I want to solve it."
+      }
+    ],
+    "updated_at": "2026-02-19T15:00:00Z"
+  },
+  {
+    "id": "d_000025",
+    "week": 8,
+    "scenario": "post",
+    "title": "Pakket ophalen",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Ik kom een pakket ophalen bij het afhaalpunt.",
+        "en": "I am here to pick up a package at the pickup point."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u de code en uw identificatie?",
+        "en": "Do you have the code and your ID?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, hier zijn ze.",
+        "en": "Yes, here they are."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Wilt u hier tekenen voor ontvangst?",
+        "en": "Would you sign here for receipt?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, natuurlijk.",
+        "en": "Yes, of course."
+      }
+    ],
+    "updated_at": "2026-02-19T15:30:00Z"
+  },
+  {
+    "id": "d_000026",
+    "week": 8,
+    "scenario": "post",
+    "title": "Beschadigd pakket",
+    "lines": [
+      {
+        "speaker": "Klant",
+        "nl": "Mijn pakket is beschadigd aangekomen.",
+        "en": "My package arrived damaged."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Heeft u foto's en het bewijs van verzending?",
+        "en": "Do you have photos and the proof of sending?"
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Ja, ik heb alles bij me.",
+        "en": "Yes, I have everything with me."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dan maken we een melding en u hoort van ons.",
+        "en": "Then we file a report and you will hear from us."
+      },
+      {
+        "speaker": "Klant",
+        "nl": "Dank u voor de hulp.",
+        "en": "Thank you for the help."
+      }
+    ],
+    "updated_at": "2026-02-19T15:30:00Z"
+  },
+  {
+    "id": "d_000027",
+    "week": 9,
+    "scenario": "neighbourhood",
+    "title": "Overlast melden",
+    "lines": [
+      {
+        "speaker": "Bewoner",
+        "nl": "Ik wil overlast melden in mijn straat.",
+        "en": "I want to report nuisance in my street."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Wat is er precies aan de hand?",
+        "en": "What exactly is going on?"
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "Er is elke avond lawaai en ik kan niet slapen.",
+        "en": "There is noise every evening and I cannot sleep."
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "We maken een melding en de wijkagent kijkt mee.",
+        "en": "We make a report and the community officer will look into it."
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "Dank u, ik hoop dat het beter wordt.",
+        "en": "Thank you, I hope it gets better."
+      }
+    ],
+    "updated_at": "2026-02-19T16:00:00Z"
+  },
+  {
+    "id": "d_000028",
+    "week": 9,
+    "scenario": "neighbourhood",
+    "title": "Afval scheiden",
+    "lines": [
+      {
+        "speaker": "Bewoner",
+        "nl": "Waar moet ik het glas en papier weggooien?",
+        "en": "Where should I throw away glass and paper?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Glas in de glasbak en papier bij oud papier.",
+        "en": "Glass in the glass container and paper with paper waste."
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "En GFT?",
+        "en": "And organic waste?"
+      },
+      {
+        "speaker": "Medewerker",
+        "nl": "Dat gaat in de groene bak.",
+        "en": "That goes in the green bin."
+      },
+      {
+        "speaker": "Bewoner",
+        "nl": "Dank u, nu is het duidelijk.",
+        "en": "Thank you, now it is clear."
+      }
+    ],
+    "updated_at": "2026-02-19T16:00:00Z"
+  },
+  {
+    "id": "d_000029",
+    "week": 10,
+    "scenario": "health",
+    "title": "Medicijnen ophalen",
+    "lines": [
+      {
+        "speaker": "Patiënt",
+        "nl": "Ik kom mijn medicijnen ophalen.",
+        "en": "I am here to pick up my medicines."
+      },
+      {
+        "speaker": "Apotheker",
+        "nl": "Heeft u uw paspoort of zorgpas?",
+        "en": "Do you have your passport or health card?"
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Ja, hier is mijn pas.",
+        "en": "Yes, here is my card."
+      },
+      {
+        "speaker": "Apotheker",
+        "nl": "Neem twee tabletten per dag en drink veel water.",
+        "en": "Take two tablets per day and drink plenty of water."
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Dank u, dat doe ik.",
+        "en": "Thank you, I will do that."
+      }
+    ],
+    "updated_at": "2026-02-19T16:30:00Z"
+  },
+  {
+    "id": "d_000030",
+    "week": 10,
+    "scenario": "health",
+    "title": "Afspraak verzetten",
+    "lines": [
+      {
+        "speaker": "Patiënt",
+        "nl": "Ik wil mijn afspraak verzetten.",
+        "en": "I want to reschedule my appointment."
+      },
+      {
+        "speaker": "Assistente",
+        "nl": "Wanneer kunt u?",
+        "en": "When can you?"
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Volgende week dinsdag in de ochtend.",
+        "en": "Next week Tuesday in the morning."
+      },
+      {
+        "speaker": "Assistente",
+        "nl": "Dat kan. Ik zet het om 10:00.",
+        "en": "That works. I will set it for 10:00."
+      },
+      {
+        "speaker": "Patiënt",
+        "nl": "Dank u wel.",
+        "en": "Thank you."
+      }
+    ],
+    "updated_at": "2026-02-19T16:30:00Z"
   }
 ]

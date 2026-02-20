@@ -22,7 +22,7 @@ content/
 ## Global Constraints
 
 - `updated_at` is **ISO 8601 UTC** with `Z` (e.g., `2026-02-19T10:30:00Z`).
-- `week` is an integer within **1–8** for `v1.0.0`.
+- `week` is an integer within **1–10** for `v1.0.0`.
 - `topic` enum (v1.0.0): `"supermarket"`, `"doctor"`, `"greetings"`.
 - `article` must be `"de"`, `"het"`, or `null`.
 - Fields stored as JSON strings in SQLite (`tags`, `payload`, `lines`, `data`) are authored here as **native JSON** and serialized at ingest.
@@ -58,7 +58,7 @@ content/
     "properties": {
       "id": { "type": "string", "pattern": "^w_\\d{6}$" },
       "week": { "type": "integer", "minimum": 1, "maximum": 8 },
-      "topic": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport"] },
+      "topic": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport", "banking", "post", "neighbourhood", "health"] },
       "lemma": { "type": "string", "minLength": 1 },
       "article": { "type": ["string", "null"], "enum": ["de", "het", null] },
       "translation": { "type": "string", "minLength": 1 },
@@ -183,7 +183,7 @@ content/
     "properties": {
       "id": { "type": "string", "pattern": "^d_\\d{6}$" },
       "week": { "type": "integer", "minimum": 1, "maximum": 8 },
-      "scenario": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport"] },
+      "scenario": { "type": "string", "enum": ["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport", "banking", "post", "neighbourhood", "health"] },
       "title": { "type": "string", "minLength": 1 },
       "lines": {
         "type": "array",
@@ -240,7 +240,7 @@ content/
 - Missing required fields for each entity
 - `article` in `{ "de", "het", null }`
 - `week` in range **1–8**
-- `topic` in enum `{ "supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport" }`
+- `topic` in enum `{ "supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport", "banking", "post", "neighbourhood", "health" }`
 - `updated_at` matches ISO UTC `YYYY-MM-DDTHH:MM:SSZ`
 
 ## Optional Validation Script Stub

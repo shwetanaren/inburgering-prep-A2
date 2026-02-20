@@ -159,14 +159,6 @@ export default function LessonScreen() {
           );
         })}
 
-        <Button
-          className="mt-6"
-          label={firstSentence ? `Start ${firstSentence.title}` : 'Start Lesson'}
-          onPress={() => {
-            if (firstSentence) router.push(`/lesson/${firstSentence.id}`);
-          }}
-          rightIcon={<Ionicons name="arrow-forward" size={16} color="#fff" />}
-        />
       </ScrollView>
     </Screen>
   );

@@ -3,8 +3,8 @@ import path from "node:path";
 
 const CONTENT_DIR = path.resolve("content/v1.0.0");
 const WEEK_MIN = 1;
-const WEEK_MAX = 8;
-const TOPIC_ENUM = new Set(["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport"]);
+const WEEK_MAX = 10;
+const TOPIC_ENUM = new Set(["supermarket", "doctor", "greetings", "gemeente", "housing", "school", "work", "transport", "banking", "post", "neighbourhood", "health"]);
 const ISO_UTC_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
 const ARTICLE_ENUM = new Set(["de", "het", null]);
 

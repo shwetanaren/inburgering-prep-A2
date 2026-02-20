@@ -10,6 +10,11 @@ import type {
   DialogueDTO,
   DialogueLineDTO,
   DialogueSummaryDTO,
+  ContentKind,
+  ContentProgressDTO,
+  ContentReviewResultDTO,
+  ActivitySummaryDTO,
+  WeeklyActivityDTO,
   ExerciseDTO,
   LessonDTO,
   LessonPayloadDTO,
@@ -93,6 +98,21 @@ type LessonProgressRow = {
 type SettingsRow = {
   daily_goal: number;
   notifications_enabled: number;
+};
+
+type ContentStateRow = {
+  content_id: string;
+  kind: ContentKind;
+  box: number;
+  next_review_at: string;
+  next_review_at_ts: number;
+  last_review_at: string | null;
+  last_review_at_ts: number | null;
+  correct_streak: number;
+  total_reviews: number;
+  total_lapses: number;
+  created_at: string;
+  created_at_ts: number;
 };
 
 type AppStateRow = {
@@ -219,6 +239,43 @@ function localStartMs(iso: string): number {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
 }
 
+function localWeekStartMs(iso: string): number {
+  const d = new Date(iso);
+  const day = d.getDay();
+  const diff = (day + 6) % 7; // Monday = 0
+  const monday = new Date(d.getFullYear(), d.getMonth(), d.getDate() - diff);
+  monday.setHours(0, 0, 0, 0);
+  return monday.getTime();
+}
+
+function formatWeekLabel(ms: number): string {
+  const d = new Date(ms);
+  const month = d.toLocaleString('en-US', { month: 'short' });
+  const day = d.getDate();
+  return `${month} ${day}`;
+}
+
+function computeStreakUpdate(
+  lastReviewedAt: string | null,
+  reviewedAt: string,
+  prevStreakCurrent: number,
+  prevStreakBest: number
+): { streakCurrent: number; streakBest: number } {
+  if (!lastReviewedAt) {
+    const streakCurrent = 1;
+    return { streakCurrent, streakBest: Math.max(prevStreakBest, streakCurrent) };
+  }
+
+  const diffDays = Math.floor((utcStartMs(reviewedAt) - utcStartMs(lastReviewedAt)) / 86400000);
+
+  if (diffDays <= 0) {
+    return { streakCurrent: prevStreakCurrent, streakBest: prevStreakBest };
+  }
+
+  const streakCurrent = diffDays === 1 ? prevStreakCurrent + 1 : 1;
+  return { streakCurrent, streakBest: Math.max(prevStreakBest, streakCurrent) };
+}
+
 async function getSettingsRow(): Promise<SettingsRow> {
   const db = await getDb();
   const row = await db.getFirstAsync<SettingsRow>(
@@ -263,6 +320,7 @@ export async function getProgress(
   const db = await getDb();
   const nowTs = Date.parse(nowIso);
   const startOfDayTs = localStartMs(nowIso);
+  await pruneReviewLogs(90, nowIso);
 
   const dueRow = await db.getFirstAsync<{ count: number }>(
     'SELECT COUNT(*) as count FROM srs_state WHERE next_review_at_ts <= ?;',
@@ -326,6 +384,292 @@ export async function getThemeProgress(
     reviewedTodayCount: Number(reviewedTodayRow?.count ?? 0),
     dueCount: Number(dueRow?.count ?? 0),
   };
+}
+
+export async function getContentProgress(
+  week: number,
+  kind: ContentKind,
+  nowIso: string = new Date().toISOString()
+): Promise<ContentProgressDTO> {
+  const db = await getDb();
+  const nowTs = Date.parse(nowIso);
+  const startOfDayTs = localStartMs(nowIso);
+
+  if (kind === 'sentence') {
+    const totalRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count FROM lessons WHERE week = ? AND kind = 'sentence';`,
+      [week]
+    );
+    const dueRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count
+       FROM srs_state_content s
+       JOIN lessons l ON l.id = s.content_id
+       WHERE s.kind = 'sentence' AND l.week = ? AND s.next_review_at_ts <= ?;`,
+      [week, nowTs]
+    );
+    const reviewedTodayRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count
+       FROM reviews_log_content r
+       JOIN lessons l ON l.id = r.content_id
+       WHERE r.kind = 'sentence' AND l.week = ? AND r.reviewed_at_ts >= ?;`,
+      [week, startOfDayTs]
+    );
+    return {
+      totalCount: Number(totalRow?.count ?? 0),
+      reviewedTodayCount: Number(reviewedTodayRow?.count ?? 0),
+      dueCount: Number(dueRow?.count ?? 0),
+    };
+  }
+
+  const totalRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count FROM dialogues WHERE week = ?;`,
+    [week]
+  );
+  const dueRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count
+     FROM srs_state_content s
+     JOIN dialogues d ON d.id = s.content_id
+     WHERE s.kind = 'dialogue' AND d.week = ? AND s.next_review_at_ts <= ?;`,
+    [week, nowTs]
+  );
+  const reviewedTodayRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count
+     FROM reviews_log_content r
+     JOIN dialogues d ON d.id = r.content_id
+     WHERE r.kind = 'dialogue' AND d.week = ? AND r.reviewed_at_ts >= ?;`,
+    [week, startOfDayTs]
+  );
+  return {
+    totalCount: Number(totalRow?.count ?? 0),
+    reviewedTodayCount: Number(reviewedTodayRow?.count ?? 0),
+    dueCount: Number(dueRow?.count ?? 0),
+  };
+}
+
+async function seedContentState(
+  contentId: string,
+  kind: ContentKind,
+  nowIso: string
+): Promise<void> {
+  const db = await getDb();
+  const nowTs = Date.parse(nowIso);
+  await db.runAsync(
+    `INSERT INTO srs_state_content (
+        content_id,
+        kind,
+        box,
+        next_review_at,
+        next_review_at_ts,
+        last_review_at,
+        last_review_at_ts,
+        correct_streak,
+        total_reviews,
+        total_lapses,
+        created_at,
+        created_at_ts
+     )
+     VALUES (?, ?, 1, ?, ?, NULL, NULL, 0, 0, 0, ?, ?)
+     ON CONFLICT(content_id, kind) DO NOTHING;`,
+    [contentId, kind, nowIso, nowTs, nowIso, nowTs]
+  );
+}
+
+export async function recordContentReview(
+  contentId: string,
+  kind: ContentKind,
+  rating: Rating = 'good',
+  scheduledAtIso?: string
+): Promise<ContentReviewResultDTO> {
+  const db = await getDb();
+  const reviewedAt = new Date().toISOString();
+  let prevState = await db.getFirstAsync<ContentStateRow>(
+    'SELECT * FROM srs_state_content WHERE content_id = ? AND kind = ?;',
+    [contentId, kind]
+  );
+
+  if (!prevState) {
+    await seedContentState(contentId, kind, reviewedAt);
+    prevState = await db.getFirstAsync<ContentStateRow>(
+      'SELECT * FROM srs_state_content WHERE content_id = ? AND kind = ?;',
+      [contentId, kind]
+    );
+  }
+
+  const prevBox = prevState?.box ?? 1;
+  const nextBox = computeNextBox(prevBox, rating);
+  const nextReviewAt = computeNextReviewAt(reviewedAt, nextBox, DEFAULT_SRS_CONFIG);
+  const scheduledAt = scheduledAtIso ?? prevState?.next_review_at ?? reviewedAt;
+
+  const reviewedAtTs = Date.parse(reviewedAt);
+  const scheduledAtTs = Date.parse(scheduledAt);
+  const createdAt = prevState?.created_at ?? reviewedAt;
+  const createdAtTs = prevState?.created_at_ts ?? reviewedAtTs;
+
+  const totalReviews = (prevState?.total_reviews ?? 0) + 1;
+  const totalLapses = (prevState?.total_lapses ?? 0) + (rating === 'again' ? 1 : 0);
+  const correctStreak = rating === 'again' ? 0 : (prevState?.correct_streak ?? 0) + 1;
+
+  await db.execAsync('BEGIN;');
+  try {
+    const appState = await db.getFirstAsync<{
+      streak_current: number;
+      streak_best: number;
+      last_reviewed_at: string | null;
+    }>('SELECT streak_current, streak_best, last_reviewed_at FROM app_state WHERE id = 1;');
+
+    const streakUpdate = computeStreakUpdate(
+      appState?.last_reviewed_at ?? null,
+      reviewedAt,
+      appState?.streak_current ?? 0,
+      appState?.streak_best ?? 0
+    );
+
+    await db.runAsync(
+      `UPDATE app_state
+       SET streak_current = ?, streak_best = ?, last_reviewed_at = ?
+       WHERE id = 1;`,
+      [streakUpdate.streakCurrent, streakUpdate.streakBest, reviewedAt]
+    );
+
+    await db.runAsync(
+      `INSERT INTO reviews_log_content (
+         content_id, kind, rating, prev_box, next_box, scheduled_at, scheduled_at_ts,
+         reviewed_at, reviewed_at_ts, latency_ms
+       )
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL);`,
+      [
+        contentId,
+        kind,
+        rating,
+        prevBox,
+        nextBox,
+        scheduledAt,
+        scheduledAtTs,
+        reviewedAt,
+        reviewedAtTs,
+      ]
+    );
+
+    await db.runAsync(
+      `INSERT INTO srs_state_content (
+         content_id, kind, box, next_review_at, next_review_at_ts, last_review_at,
+         last_review_at_ts, correct_streak, total_reviews, total_lapses, created_at, created_at_ts
+       )
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(content_id, kind) DO UPDATE SET
+         box = excluded.box,
+         next_review_at = excluded.next_review_at,
+         next_review_at_ts = excluded.next_review_at_ts,
+         last_review_at = excluded.last_review_at,
+         last_review_at_ts = excluded.last_review_at_ts,
+         correct_streak = excluded.correct_streak,
+         total_reviews = excluded.total_reviews,
+         total_lapses = excluded.total_lapses;`,
+      [
+        contentId,
+        kind,
+        nextBox,
+        nextReviewAt,
+        Date.parse(nextReviewAt),
+        reviewedAt,
+        reviewedAtTs,
+        correctStreak,
+        totalReviews,
+        totalLapses,
+        createdAt,
+        createdAtTs,
+      ]
+    );
+
+    await db.execAsync('COMMIT;');
+  } catch (err) {
+    await db.execAsync('ROLLBACK;');
+    throw err;
+  }
+
+  return {
+    contentId,
+    kind,
+    rating,
+    prevBox,
+    nextBox,
+    scheduledAt,
+    reviewedAt,
+    nextReviewAt,
+  };
+}
+
+export async function getWeeklyActivity(
+  weeksBack: number = 6,
+  nowIso: string = new Date().toISOString()
+): Promise<ActivitySummaryDTO> {
+  const db = await getDb();
+  const nowWeekStart = localWeekStartMs(nowIso);
+  const weeks: WeeklyActivityDTO[] = [];
+
+  for (let i = weeksBack - 1; i >= 0; i -= 1) {
+    const start = nowWeekStart - i * 7 * 86400000;
+    const end = start + 7 * 86400000;
+
+    const wordsRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count FROM reviews_log WHERE reviewed_at_ts >= ? AND reviewed_at_ts < ?;`,
+      [start, end]
+    );
+    const sentencesRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count FROM reviews_log_content
+       WHERE kind = 'sentence' AND reviewed_at_ts >= ? AND reviewed_at_ts < ?;`,
+      [start, end]
+    );
+    const dialoguesRow = await db.getFirstAsync<{ count: number }>(
+      `SELECT COUNT(*) as count FROM reviews_log_content
+       WHERE kind = 'dialogue' AND reviewed_at_ts >= ? AND reviewed_at_ts < ?;`,
+      [start, end]
+    );
+
+    const words = Number(wordsRow?.count ?? 0);
+    const sentences = Number(sentencesRow?.count ?? 0);
+    const dialogues = Number(dialoguesRow?.count ?? 0);
+    weeks.push({
+      weekStartMs: start,
+      label: formatWeekLabel(start),
+      words,
+      sentences,
+      dialogues,
+      total: words + sentences + dialogues,
+    });
+  }
+
+  const totalWordsRow = await db.getFirstAsync<{ count: number }>(
+    'SELECT COUNT(*) as count FROM reviews_log;'
+  );
+  const totalSentencesRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count FROM reviews_log_content WHERE kind = 'sentence';`
+  );
+  const totalDialoguesRow = await db.getFirstAsync<{ count: number }>(
+    `SELECT COUNT(*) as count FROM reviews_log_content WHERE kind = 'dialogue';`
+  );
+
+  const words = Number(totalWordsRow?.count ?? 0);
+  const sentences = Number(totalSentencesRow?.count ?? 0);
+  const dialogues = Number(totalDialoguesRow?.count ?? 0);
+
+  return {
+    weeks,
+    totals: {
+      words,
+      sentences,
+      dialogues,
+      total: words + sentences + dialogues,
+    },
+  };
+}
+
+async function pruneReviewLogs(days: number, nowIso: string): Promise<void> {
+  if (days <= 0) return;
+  const db = await getDb();
+  const cutoffTs = Date.parse(nowIso) - days * 86400000;
+  await db.runAsync('DELETE FROM reviews_log WHERE reviewed_at_ts < ?;', [cutoffTs]);
+  await db.runAsync('DELETE FROM reviews_log_content WHERE reviewed_at_ts < ?;', [cutoffTs]);
 }
 
 export async function getTodayPlan(

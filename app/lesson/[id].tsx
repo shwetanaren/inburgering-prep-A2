@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews';
 import { useOffline } from '@/components/useOffline';
-import { getLesson, setLessonProgress } from '@/packages/services';
+import { getLesson, recordContentReview, setLessonProgress } from '@/packages/services';
 import type { LessonDTO, SentenceLessonPayloadDTO, VocabLessonPayloadDTO } from '@/packages/services';
 
 export default function LessonDetailScreen() {
@@ -19,13 +19,19 @@ export default function LessonDetailScreen() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [lesson, setLesson] = useState<LessonDTO | null>(null);
+  const [justCompleted, setJustCompleted] = useState(false);
 
   const load = useCallback(() => {
     if (!id) return;
     setLoading(true);
     setError(null);
     getLesson(id)
-      .then((data) => setLesson(data))
+      .then((data) => {
+        setLesson(data);
+        if (data?.progress?.status !== 'done') {
+          setJustCompleted(false);
+        }
+      })
       .catch((err: Error) => setError(err))
       .finally(() => setLoading(false));
   }, [id]);
@@ -34,15 +40,13 @@ export default function LessonDetailScreen() {
     load();
   }, [load]);
 
-  const onStart = async () => {
-    if (!lesson) return;
-    await setLessonProgress(lesson.id, 'in_progress');
-    load();
-  };
-
   const onComplete = async () => {
     if (!lesson) return;
+    setJustCompleted(true);
     await setLessonProgress(lesson.id, 'done');
+    if (lesson.kind === 'sentence') {
+      await recordContentReview(lesson.id, 'sentence', 'good');
+    }
     load();
   };
 
@@ -141,8 +145,12 @@ export default function LessonDetailScreen() {
         )}
 
         <View className="mt-6">
-          <Button label="Start Lesson" onPress={onStart} />
-          <Button className="mt-3" variant="secondary" label="Mark Complete" onPress={onComplete} />
+          <Button
+            className="mt-3"
+            variant={lesson.progress?.status === 'done' || justCompleted ? 'success' : 'secondary'}
+            label={lesson.progress?.status === 'done' || justCompleted ? 'Completed' : 'Mark Complete'}
+            onPress={lesson.progress?.status === 'done' ? undefined : onComplete}
+          />
         </View>
       </ScrollView>
     </Screen>

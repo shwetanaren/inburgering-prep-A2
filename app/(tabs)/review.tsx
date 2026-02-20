@@ -212,15 +212,12 @@ export default function ReviewScreen() {
                 ) : null}
               </View>
             ) : (
-              <View className="mt-6 h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                <Ionicons name="volume-medium" size={20} color="#2f6cf6" />
+              <View className="mt-6 rounded-full bg-blue-100 px-4 py-2">
+                <Text className="text-[12px] font-semibold text-brand">Tap to reveal</Text>
               </View>
             )}
           </Card>
         </Pressable>
-        <Text className="mt-3 text-center text-[12px] text-muted">
-          Tap card to reveal meaning
-        </Text>
       </View>
 
       <View className="px-5 pb-6 pt-2">

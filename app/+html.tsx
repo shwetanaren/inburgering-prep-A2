@@ -17,27 +17,41 @@ const globalStyles = `
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   min-height: 100%;
   background: #eef2f7;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-#root, body > div:first-child {
+#root,
+#root > div,
+body > div:first-child,
+body > div:first-child > div {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
 }
 
 @media (min-width: 768px) {
   body {
-    display: flex;
     justify-content: center;
   }
 
-  #root, body > div:first-child {
+  #root,
+  #root > div,
+  body > div:first-child,
+  body > div:first-child > div {
     width: 100%;
     max-width: 430px;
     background: #eef2f7;

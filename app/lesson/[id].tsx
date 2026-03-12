@@ -3,6 +3,7 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import lessons from '../../content/v1.0.0/lessons.json';
 import { Screen } from '@/components/ui/Screen';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -11,6 +12,10 @@ import { EmptyState, ErrorState, LoadingState } from '@/components/ui/StateViews
 import { useOffline } from '@/components/useOffline';
 import { getLesson, recordContentReview, setLessonProgress } from '@/packages/services';
 import type { LessonDTO, SentenceLessonPayloadDTO, VocabLessonPayloadDTO } from '@/packages/services';
+
+export function generateStaticParams() {
+  return (lessons as Array<{ id: string }>).map((lesson) => ({ id: lesson.id }));
+}
 
 export default function LessonDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();

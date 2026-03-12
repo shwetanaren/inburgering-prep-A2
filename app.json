@@ -2,6 +2,10 @@
   "expo": {
     "name": "agentic-inburgeringprep",
     "slug": "agentic-inburgeringprep",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shweta.inburgeringprep"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,16 +17,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.shweta.inburgeringprep"
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +35,8 @@
       "expo-router"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/inburgering-prep-A2"
     }
   }
 }

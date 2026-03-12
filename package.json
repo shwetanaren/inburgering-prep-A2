@@ -10,7 +10,7 @@
     "test": "vitest run",
     "export:web": "expo export --platform web",
     "predeploy": "npm run export:web",
-    "deploy": "gh-pages --nojekyll -d dist"
+    "deploy": "gh-pages --repo https://github.com/shwetanaren/shwetanaren.github.io.git --branch master --nojekyll -d dist"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -47,5 +47,5 @@
     "vitest": "^3.2.4"
   },
   "private": true,
-  "homepage": "https://shwetanaren.github.io/inburgering-prep-A2/"
+  "homepage": "https://shwetanaren.github.io/"
 }

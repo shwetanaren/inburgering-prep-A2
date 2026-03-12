@@ -35,8 +35,7 @@
       "expo-router"
     ],
     "experiments": {
-      "typedRoutes": true,
-      "baseUrl": "/inburgering-prep-A2"
+      "typedRoutes": true
     }
   }
 }

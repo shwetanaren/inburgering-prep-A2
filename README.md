@@ -1,6 +1,6 @@
 # Inburgering Prep A2
 
-Mobile-first Dutch learning app for A2 inburgering practice.
+Free mobile-first Dutch learning app for A2 inburgering practice, built to help learners construct real sentences with more confidence.
 
 Live site: [https://shwetanaren.github.io/](https://shwetanaren.github.io/)
 

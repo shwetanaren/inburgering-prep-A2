@@ -165,7 +165,9 @@ export default function HomeScreen() {
             </View>
             <Text className="text-[17px] font-semibold text-ink">InburgeringPrep</Text>
           </View>
-          <Ionicons name="settings-outline" size={20} color="#6b7280" />
+          <Pressable onPress={() => router.push('/modal')}>
+            <Ionicons name="information-circle-outline" size={20} color="#6b7280" />
+          </Pressable>
         </View>
 
         <Card className="mt-5 px-5 py-4">

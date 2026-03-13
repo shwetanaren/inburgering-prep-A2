@@ -1,10 +1,12 @@
 import React from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Linking, Pressable, ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Screen } from '@/components/ui/Screen';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+
+const SOURCE_URL = 'https://github.com/shwetanaren/inburgering-prep-A2';
 
 export default function ModalScreen() {
   const router = useRouter();
@@ -69,6 +71,15 @@ export default function ModalScreen() {
             This free public release was created by Shweta Narendernath in collaboration with AI.
             A separate paid version, tuned by learning levels, is planned as a different app.
           </Text>
+          <Pressable
+            className="mt-4 self-start rounded-full border border-line bg-white px-4 py-2"
+            onPress={() => Linking.openURL(SOURCE_URL)}
+          >
+            <View className="flex-row items-center gap-2">
+              <Ionicons name="open-outline" size={16} color="#2f6cf6" />
+              <Text className="text-[13px] font-semibold text-brand">View project page</Text>
+            </View>
+          </Pressable>
         </Card>
 
         <Button className="mt-6" label="Close" onPress={() => router.back()} />

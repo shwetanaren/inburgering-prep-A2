@@ -4,7 +4,7 @@
     "slug": "agentic-inburgeringprep",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.shweta.inburgeringprep"
+      "bundleIdentifier": "com.inburgeringprep.app"
     },
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,7 +24,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.shweta.inburgeringprep"
+      "package": "com.inburgeringprep.app"
     },
     "web": {
       "bundler": "metro",
